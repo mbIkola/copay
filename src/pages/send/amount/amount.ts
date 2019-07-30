@@ -205,11 +205,11 @@ export class AmountPage extends WalletTabsChild {
       ? this.navParams.data.wallet.coin
       : this.wallet && this.wallet.coin;
 
-    if (parentWalletCoin === 'btc' || !parentWalletCoin) {
+    if (parentWalletCoin === 'swx' || !parentWalletCoin) {
       this.availableUnits.push({
         name: 'Bitcoin',
-        id: 'btc',
-        shortName: 'BTC'
+        id: 'swx',
+        shortName: 'SWX'
       });
     }
 
@@ -588,7 +588,7 @@ export class AmountPage extends WalletTabsChild {
     if (this.unitIndex >= this.availableUnits.length) this.unitIndex = 0;
 
     if (this.availableUnits[this.unitIndex].isFiat) {
-      // Always return to BTC... TODO?
+      // Always return to SWX... TODO?
       this.altUnitIndex = 0;
     } else {
       this.altUnitIndex = _.findIndex(this.availableUnits, {

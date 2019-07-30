@@ -61,7 +61,7 @@ export class ProfileProvider {
     const config = this.configProvider.get();
     const defaults = this.configProvider.getDefaults();
     const defaultColor =
-      this.appProvider.info.nameCase == 'Copay' ? '#1abb9b' : '#647ce8';
+      this.appProvider.info.nameCase == 'Copay' ? '#f01e1e' : '#647ce8';
     // this.config.whenAvailable( (config) => { TODO
     wallet.usingCustomBWS =
       config.bwsFor &&
@@ -1084,7 +1084,7 @@ export class ProfileProvider {
       setTimeout(() => {
         this.seedWallet(opts)
           .then(walletClient => {
-            const coin = opts.coin == 'btc' ? '[BTC]' : '[BCH]';
+            const coin = opts.coin == 'swx' ? '[SWX]' : '[BCH]';
             const name =
               opts.name ||
               `${this.translate.instant('Personal Wallet')} ${coin}`;
@@ -1207,7 +1207,7 @@ export class ProfileProvider {
     opts.m = 1;
     opts.n = 1;
     opts.networkName = 'livenet';
-    opts.coin = Coin.BTC;
+    opts.coin = Coin.SWX;
     return this.createNewSeedWallet(opts);
   }
 

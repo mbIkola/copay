@@ -185,7 +185,7 @@ export class MultiSendPage extends WalletTabsChild {
       let recipientType;
       try {
         parsed =
-          this.wallet.coin == 'btc'
+          this.wallet.coin == 'swx'
             ? this.bwcProvider.getBitcore().URI(this.search)
             : this.bwcProvider.getBitcoreCash().URI(this.search);
         toAddress = parsed.address

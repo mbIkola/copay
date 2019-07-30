@@ -109,7 +109,7 @@ export class BitPayCardTopUpPage {
     this.amount = this.navParams.data.amount;
 
     let coin;
-    if (this.currency == 'BTC') coin = 'btc';
+    if (this.currency == 'SWX') coin = 'swx';
     else if (this.currency == 'BCH') coin = 'bch';
     else coin = null;
 
@@ -412,7 +412,7 @@ export class BitPayCardTopUpPage {
               buyerSelectedTransactionCurrency: wallet.coin.toUpperCase()
             })
               .then(inv => {
-                // Check if BTC or BCH is enabled in this account
+                // Check if SWX or BCH is enabled in this account
                 if (!this.isCryptoCurrencySupported(wallet, inv)) {
                   return reject({
                     message: this.translate.instant(
@@ -475,7 +475,7 @@ export class BitPayCardTopUpPage {
     this.onGoingProcessProvider.set('loadingTxInfo');
     this.createInvoice(dataSrc)
       .then(invoice => {
-        // Check if BTC or BCH is enabled in this account
+        // Check if SWX or BCH is enabled in this account
         if (!this.isCryptoCurrencySupported(wallet, invoice)) {
           let msg = this.translate.instant(
             'Top-up with this cryptocurrency is not enabled'

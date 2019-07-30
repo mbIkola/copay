@@ -61,7 +61,7 @@ export class BuyCoinbasePage {
     private platformProvider: PlatformProvider
   ) {
     this.isFiat = true;
-    this.coin = this.navParams.data.coin; // BTC
+    this.coin = this.navParams.data.coin; // SWX
     this.amount = this.navParams.data.amount; // USD
     this.currency = this.navParams.data.currency; // USD
     this.network = this.coinbaseProvider.getNetwork();
@@ -353,12 +353,12 @@ export class BuyCoinbasePage {
       this.currency
     );
 
-    // ** Buy always in BTC **
+    // ** Buy always in SWX **
     // It 's needed for calculate the fee to send
     // purchased bitcoin from Coinbase to Copay in a
     // single transaction
     this.amount = (parsedAmount.amountSat / 100000000).toFixed(8);
-    this.currency = 'BTC';
+    this.currency = 'SWX';
 
     this.amountUnitStr = parsedAmount.amountUnitStr;
     this.onGoingProcessProvider.set('calculatingFee');
@@ -386,7 +386,7 @@ export class BuyCoinbasePage {
       await this.navCtrl.popToRoot({ animate: false });
       await this.navCtrl.push(
         CoinbasePage,
-        { coin: 'btc' },
+        { coin: 'swx' },
         { animate: false }
       );
     });

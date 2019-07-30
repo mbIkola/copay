@@ -66,7 +66,7 @@ export class SendPage extends WalletTabsChild {
   ionViewWillEnter() {
     this.events.subscribe('Local/AddressScan', this.updateAddressHandler);
 
-    this.walletsBtc = this.profileProvider.getWallets({ coin: 'btc' });
+    this.walletsBtc = this.profileProvider.getWallets({ coin: 'swx' });
     this.walletsBch = this.profileProvider.getWallets({ coin: 'bch' });
     this.hasBtcWallets = !_.isEmpty(this.walletsBtc);
     this.hasBchWallets = !_.isEmpty(this.walletsBch);
@@ -91,7 +91,7 @@ export class SendPage extends WalletTabsChild {
 
   public async goToReceive() {
     await this.walletTabsProvider.goToTabIndex(0);
-    const coinName = this.wallet.coin === Coin.BTC ? 'bitcoin' : 'bitcoin cash';
+    const coinName = this.wallet.coin === Coin.SWX ? 'bitcoin' : 'bitcoin cash';
     const infoSheet = this.actionSheetProvider.createInfoSheet(
       'receiving-bitcoin',
       { coinName }
@@ -197,7 +197,7 @@ export class SendPage extends WalletTabsChild {
       const parsedData = this.incomingDataProvider.parseData(this.search);
       if (parsedData && parsedData.type == 'PayPro') {
         const coin: string =
-          this.search.indexOf('bitcoincash') === 0 ? Coin.BCH : Coin.BTC;
+          this.search.indexOf('bitcoincash') === 0 ? Coin.BCH : Coin.SWX;
         this.incomingDataProvider
           .getPayProDetails(this.search)
           .then(payProDetails => {

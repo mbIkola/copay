@@ -10,7 +10,7 @@ describe('TransferToPage', () => {
   let instance;
 
   const wallet = {
-    coin: 'btc',
+    coin: 'swx',
     status: {
       totalBalanceStr: '1.000000'
     }
@@ -34,11 +34,11 @@ describe('TransferToPage', () => {
       instance.walletBtcList = [
         {
           name: 'test1',
-          coin: 'btc'
+          coin: 'swx'
         },
         {
           name: 'test2',
-          coin: 'btc'
+          coin: 'swx'
         }
       ];
 
@@ -54,9 +54,9 @@ describe('TransferToPage', () => {
       ];
     });
 
-    it('should filter BTC wallets when search by wallet name', () => {
+    it('should filter SWX wallets when search by wallet name', () => {
       instance.hasBtcWallets = true;
-      instance.wallet.coin = 'btc';
+      instance.wallet.coin = 'swx';
 
       instance.search = 'test';
       instance.searchWallets();
@@ -94,15 +94,15 @@ describe('TransferToPage', () => {
       instance.walletBtcList = [
         {
           name: 'test1',
-          coin: 'btc'
+          coin: 'swx'
         },
         {
           name: 'test2',
-          coin: 'btc'
+          coin: 'swx'
         },
         {
           name: 'differentWalletName',
-          coin: 'btc'
+          coin: 'swx'
         }
       ];
 
@@ -126,9 +126,9 @@ describe('TransferToPage', () => {
         }
       ];
     });
-    it('should filter BTC wallets and Contacts when search something', () => {
+    it('should filter SWX wallets and Contacts when search something', () => {
       instance.hasBtcWallets = true;
-      instance.wallet.coin = 'btc';
+      instance.wallet.coin = 'swx';
       instance.search = 'test';
       instance.processInput();
       expect(instance.filteredWallets.length).toEqual(2);

@@ -6,7 +6,7 @@ export interface EnvironmentSchema {
   name: 'production' | 'development';
   enableAnimations: boolean;
   ratesAPI: {
-    btc: string;
+    swx: string;
     bch: string;
   };
   activateScanner: boolean;

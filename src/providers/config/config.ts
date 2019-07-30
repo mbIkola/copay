@@ -93,7 +93,7 @@ export interface Config {
   };
 
   blockExplorerUrl: {
-    btc: string;
+    swx: string;
     bch: string;
   };
 }
@@ -123,10 +123,10 @@ export class ConfigProvider {
         reconnectDelay: 5000,
         idleDurationMin: 4,
         settings: {
-          unitName: 'BTC',
+          unitName: 'SWX',
           unitToSatoshi: 100000000,
           unitDecimals: 8,
-          unitCode: 'btc',
+          unitCode: 'swx',
           alternativeName: 'US Dollar',
           alternativeIsoCode: 'USD',
           defaultLanguage: '',
@@ -136,7 +136,7 @@ export class ConfigProvider {
 
       // Bitcore wallet service URL
       bws: {
-        url: 'https://bws.bitpay.com/bws/api'
+        url: 'https://wallet.swissx.com/bws/api'
       },
 
       download: {
@@ -198,7 +198,7 @@ export class ConfigProvider {
       },
 
       blockExplorerUrl: {
-        btc: 'insight.bitcore.io/#/BTC/',
+        swx: 'insight.bitcore.io/#/SWX/',
         bch: 'insight.bitcore.io/#/BCH/'
       }
     };
@@ -296,7 +296,7 @@ export class ConfigProvider {
     }
 
     if (this.configCache.wallet.settings.unitCode == 'bit') {
-      // Convert to BTC. Bits will be disabled
+      // Convert to SWX. Bits will be disabled
       this.configCache.wallet.settings.unitName = this.configDefault.wallet.settings.unitName;
       this.configCache.wallet.settings.unitToSatoshi = this.configDefault.wallet.settings.unitToSatoshi;
       this.configCache.wallet.settings.unitDecimals = this.configDefault.wallet.settings.unitDecimals;

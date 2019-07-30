@@ -9,12 +9,12 @@ describe('Derivation Path Helper Provider', () => {
 
   /* default paths */
   it('should get successfully the default derivation paths for livenet and testnet networks', () => {
-    const livenetBTC = service.defaultBTC;
+    const livenetSWX = service.defaultSWX;
     const livenetBCH = service.defaultBCH;
     const testnet = service.defaultTestnet;
 
-    expect(livenetBTC).toBeDefined();
-    expect(livenetBTC).toEqual("m/44'/0'/0'");
+    expect(livenetSWX).toBeDefined();
+    expect(livenetSWX).toEqual("m/44'/0'/0'");
     expect(livenetBCH).toBeDefined();
     expect(livenetBCH).toEqual("m/44'/145'/0'");
     expect(testnet).toBeDefined();
@@ -22,7 +22,7 @@ describe('Derivation Path Helper Provider', () => {
   });
 
   /* BIP44 */
-  it('should parse successfully the BTC livenet path for BIP44 derivation strategy', () => {
+  it('should parse successfully the SWX livenet path for BIP44 derivation strategy', () => {
     const path = "m/44'/0'/0'";
     expect(service.getDerivationStrategy(path)).toEqual('BIP44');
     expect(service.getNetworkName(path)).toEqual('livenet');
@@ -37,7 +37,7 @@ describe('Derivation Path Helper Provider', () => {
   });
 
   /* BIP45 */
-  it('should parse successfully the BTC livenet path for BIP45 derivation strategy', () => {
+  it('should parse successfully the SWX livenet path for BIP45 derivation strategy', () => {
     const path = "m/45'";
     expect(service.getDerivationStrategy(path)).toEqual('BIP45');
     expect(service.getNetworkName(path)).toEqual('livenet');
@@ -45,7 +45,7 @@ describe('Derivation Path Helper Provider', () => {
   });
 
   /* BIP48 */
-  it('should parse successfully the BTC livenet path for BIP48 derivation strategy', () => {
+  it('should parse successfully the SWX livenet path for BIP48 derivation strategy', () => {
     const path = "m/48'/0'/0'";
     expect(service.getDerivationStrategy(path)).toEqual('BIP48');
     expect(service.getNetworkName(path)).toEqual('livenet');
@@ -75,23 +75,23 @@ describe('Derivation Path Helper Provider', () => {
   });
 
   /*  isValidDerivationPathCoin */
-  it('should fail trying to parse an unsupported derivation path BTC', () => {
-    expect(service.isValidDerivationPathCoin("m/45'", 'btc')).toEqual(true);
-    expect(service.isValidDerivationPathCoin("m/44'/0'/0'", 'btc')).toEqual(
+  it('should fail trying to parse an unsupported derivation path SWX', () => {
+    expect(service.isValidDerivationPathCoin("m/45'", 'swx')).toEqual(true);
+    expect(service.isValidDerivationPathCoin("m/44'/0'/0'", 'swx')).toEqual(
       true
     );
-    expect(service.isValidDerivationPathCoin("m/44'/0'/1'", 'btc')).toEqual(
+    expect(service.isValidDerivationPathCoin("m/44'/0'/1'", 'swx')).toEqual(
       true
     );
 
-    expect(service.isValidDerivationPathCoin("m/48'/145'/0'", 'btc')).toEqual(
+    expect(service.isValidDerivationPathCoin("m/48'/145'/0'", 'swx')).toEqual(
       false
     );
 
-    expect(service.isValidDerivationPathCoin("m/48'/145'/10'", 'btc')).toEqual(
+    expect(service.isValidDerivationPathCoin("m/48'/145'/10'", 'swx')).toEqual(
       false
     );
-    expect(service.isValidDerivationPathCoin("m/44'/14'/0'", 'btc')).toEqual(
+    expect(service.isValidDerivationPathCoin("m/44'/14'/0'", 'swx')).toEqual(
       false
     );
   });

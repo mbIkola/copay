@@ -17,7 +17,7 @@ describe('BackupProvider', () => {
 
   const walletMock = {
     credentials: {
-      coin: 'btc',
+      coin: 'swx',
       network: 'livenet',
       n: 1,
       m: 1,

@@ -55,9 +55,9 @@ export class ShapeshiftDetailsPage {
 
   public openTransaction(id: string) {
     var url;
-    if (this.ssData.outgoingType.toUpperCase() == 'BTC') {
+    if (this.ssData.outgoingType.toUpperCase() == 'SWX') {
       url =
-        'https://' + this.defaults.blockExplorerUrl.btc + 'mainnet/tx/' + id;
+        'https://' + this.defaults.blockExplorerUrl.swx + 'mainnet/tx/' + id;
     } else if (this.ssData.outgoingType.toUpperCase() == 'BCH') {
       url =
         'https://' + this.defaults.blockExplorerUrl.bch + 'mainnet/tx/' + id;

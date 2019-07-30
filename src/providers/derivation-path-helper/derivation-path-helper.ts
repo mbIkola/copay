@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class DerivationPathHelperProvider {
-  public defaultBTC: string;
+  public defaultSWX: string;
   public defaultBCH: string;
   public defaultTestnet: string;
 
   public constructor() {
-    this.defaultBTC = "m/44'/0'/0'";
+    this.defaultSWX = "m/44'/0'/0'";
     this.defaultBCH = "m/44'/145'/0'";
     this.defaultTestnet = "m/44'/1'/0'";
   }
@@ -47,7 +47,7 @@ export class DerivationPathHelperProvider {
     let networkName: string;
 
     switch (coinCode) {
-      case "0'": // for BTC
+      case "0'": // for SWX
         networkName = 'livenet';
         break;
       case "1'": // testnet for all coins
@@ -79,7 +79,7 @@ export class DerivationPathHelperProvider {
     if (path == "m/45'") return true;
 
     switch (coin) {
-      case 'btc':
+      case 'swx':
         isValid = ["0'", "1'"].indexOf(coinCode) > -1;
         break;
       case 'bch':

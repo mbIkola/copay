@@ -55,7 +55,7 @@ describe('SendPage', () => {
         instance.ionViewWillEnter();
 
         expect(subscribeSpy).toHaveBeenCalledTimes(1);
-        expect(profileProviderSpy).toHaveBeenCalledWith({ coin: 'btc' });
+        expect(profileProviderSpy).toHaveBeenCalledWith({ coin: 'swx' });
         expect(profileProviderSpy).toHaveBeenCalledWith({ coin: 'bch' });
       });
     });
@@ -72,20 +72,20 @@ describe('SendPage', () => {
   });
 
   describe('processInput', () => {
-    describe('for wallets btc livenet', () => {
+    describe('for wallets swx livenet', () => {
       beforeEach(() => {
-        instance.wallet.coin = 'btc';
+        instance.wallet.coin = 'swx';
         instance.wallet.network = 'livenet';
         instance.navParams.data = {
           amount: 11111111,
-          coin: 'btc'
+          coin: 'swx'
         };
 
         const checkIfContact = Promise.resolve(false);
         spyOn(instance, 'checkIfContact').and.returnValue(checkIfContact);
       });
 
-      it('should handle addresses btc livenet and call to redir function', async () => {
+      it('should handle addresses swx livenet and call to redir function', async () => {
         const redirSpy = spyOn(instance.incomingDataProvider, 'redir');
         instance.search = '3BzniD7NsTgWL5shRWPt1DRxmPtBuSccnG';
         await instance.processInput();
@@ -94,15 +94,15 @@ describe('SendPage', () => {
           '3BzniD7NsTgWL5shRWPt1DRxmPtBuSccnG',
           {
             amount: 11111111,
-            coin: 'btc'
+            coin: 'swx'
           }
         );
       });
 
-      it('should handle btc livenet paypro and call to redir function', fakeAsync(() => {
+      it('should handle swx livenet paypro and call to redir function', fakeAsync(() => {
         const redirSpy = spyOn(instance.incomingDataProvider, 'redir');
         const mockPayPro = Promise.resolve({
-          coin: 'btc',
+          coin: 'swx',
           network: 'livenet'
         });
         spyOn(
@@ -125,7 +125,7 @@ describe('SendPage', () => {
         );
       }));
 
-      it('should handle addresses btc testnet and call to error modal', async () => {
+      it('should handle addresses swx testnet and call to error modal', async () => {
         const errorModalSpy = spyOn(instance, 'showErrorMessage');
         instance.search = 'mpX44VAhEsUkfpBUFDADtEk9gDFV17G1vT';
         await instance.processInput();
@@ -185,10 +185,10 @@ describe('SendPage', () => {
         expect(errorModalSpy).toHaveBeenCalled();
       }));
 
-      it('should handle paypro btc testnet and call error modal', fakeAsync(() => {
+      it('should handle paypro swx testnet and call error modal', fakeAsync(() => {
         const errorModalSpy = spyOn(instance, 'showErrorMessage');
         const mockPayPro = Promise.resolve({
-          coin: 'btc',
+          coin: 'swx',
           network: 'testnet'
         });
         spyOn(
@@ -204,18 +204,18 @@ describe('SendPage', () => {
       }));
     });
 
-    describe('for wallets btc testnet', () => {
+    describe('for wallets swx testnet', () => {
       beforeEach(() => {
-        instance.wallet.coin = 'btc';
+        instance.wallet.coin = 'swx';
         instance.wallet.network = 'testnet';
         instance.navParams.data.amount = 11111111;
-        instance.navParams.data.coin = 'btc';
+        instance.navParams.data.coin = 'swx';
 
         const checkIfContact = Promise.resolve(false);
         spyOn(instance, 'checkIfContact').and.returnValue(checkIfContact);
       });
 
-      it('should handle addresses btc testnet and call to redir function', async () => {
+      it('should handle addresses swx testnet and call to redir function', async () => {
         const redirSpy = spyOn(instance.incomingDataProvider, 'redir');
         instance.search = 'mpX44VAhEsUkfpBUFDADtEk9gDFV17G1vT';
         await instance.processInput();
@@ -224,15 +224,15 @@ describe('SendPage', () => {
           'mpX44VAhEsUkfpBUFDADtEk9gDFV17G1vT',
           {
             amount: 11111111,
-            coin: 'btc'
+            coin: 'swx'
           }
         );
       });
 
-      it('should handle btc testnet paypro and call to redir function', fakeAsync(() => {
+      it('should handle swx testnet paypro and call to redir function', fakeAsync(() => {
         const redirSpy = spyOn(instance.incomingDataProvider, 'redir');
         const mockPayPro = Promise.resolve({
-          coin: 'btc',
+          coin: 'swx',
           network: 'testnet'
         });
         spyOn(
@@ -255,7 +255,7 @@ describe('SendPage', () => {
         );
       }));
 
-      it('should handle addresses btc livenet and call to error modal', async () => {
+      it('should handle addresses swx livenet and call to error modal', async () => {
         const errorModalSpy = spyOn(instance, 'showErrorMessage');
         instance.search = '3BzniD7NsTgWL5shRWPt1DRxmPtBuSccnG';
         await instance.processInput();
@@ -315,10 +315,10 @@ describe('SendPage', () => {
         expect(errorModalSpy).toHaveBeenCalled();
       }));
 
-      it('should handle paypro btc livenet and call error modal', fakeAsync(() => {
+      it('should handle paypro swx livenet and call error modal', fakeAsync(() => {
         const errorModalSpy = spyOn(instance, 'showErrorMessage');
         const mockPayPro = Promise.resolve({
-          coin: 'btc',
+          coin: 'swx',
           network: 'livenet'
         });
         spyOn(
@@ -385,7 +385,7 @@ describe('SendPage', () => {
         );
       }));
 
-      it('should handle addresses btc livenet and call to legacy address info modal', async () => {
+      it('should handle addresses swx livenet and call to legacy address info modal', async () => {
         const legacyAddrModalSpy = spyOn(instance, 'showLegacyAddrMessage');
         instance.search = '3BzniD7NsTgWL5shRWPt1DRxmPtBuSccnG';
         await instance.processInput();
@@ -401,7 +401,7 @@ describe('SendPage', () => {
         expect(errorModalSpy).toHaveBeenCalled();
       });
 
-      it('should handle address btc testnet and call error modal', async () => {
+      it('should handle address swx testnet and call error modal', async () => {
         const errorModalSpy = spyOn(instance, 'showErrorMessage');
         instance.search = 'mpX44VAhEsUkfpBUFDADtEk9gDFV17G1vT';
         await instance.processInput();
@@ -409,10 +409,10 @@ describe('SendPage', () => {
         expect(errorModalSpy).toHaveBeenCalled();
       });
 
-      it('should handle paypro btc livenet and call error modal', fakeAsync(() => {
+      it('should handle paypro swx livenet and call error modal', fakeAsync(() => {
         const errorModalSpy = spyOn(instance, 'showErrorMessage');
         const mockPayPro = Promise.resolve({
-          coin: 'btc',
+          coin: 'swx',
           network: 'livenet'
         });
         spyOn(
@@ -445,10 +445,10 @@ describe('SendPage', () => {
         expect(errorModalSpy).toHaveBeenCalled();
       }));
 
-      it('should handle paypro btc testnet and call error modal', fakeAsync(() => {
+      it('should handle paypro swx testnet and call error modal', fakeAsync(() => {
         const errorModalSpy = spyOn(instance, 'showErrorMessage');
         const mockPayPro = Promise.resolve({
-          coin: 'btc',
+          coin: 'swx',
           network: 'testnet'
         });
         spyOn(
@@ -524,7 +524,7 @@ describe('SendPage', () => {
         expect(errorModalSpy).toHaveBeenCalled();
       });
 
-      it('should handle address btc livenet and call to error modal', async () => {
+      it('should handle address swx livenet and call to error modal', async () => {
         const errorModalSpy = spyOn(instance, 'showErrorMessage');
         instance.search = '1CVuVALD6Zo7ms24n3iUXv162kvUzsHr69';
         await instance.processInput();
@@ -532,7 +532,7 @@ describe('SendPage', () => {
         expect(errorModalSpy).toHaveBeenCalled();
       });
 
-      it('should handle address btc testnet and call showLegacyAddrMessage', async () => {
+      it('should handle address swx testnet and call showLegacyAddrMessage', async () => {
         const showLegacyAddrMessageSpy = spyOn(
           instance,
           'showLegacyAddrMessage'
@@ -543,10 +543,10 @@ describe('SendPage', () => {
         expect(showLegacyAddrMessageSpy).toHaveBeenCalled();
       });
 
-      it('should handle paypro BTC livenet and call error modal', fakeAsync(() => {
+      it('should handle paypro SWX livenet and call error modal', fakeAsync(() => {
         const errorModalSpy = spyOn(instance, 'showErrorMessage');
         const mockPayPro = Promise.resolve({
-          coin: 'btc',
+          coin: 'swx',
           network: 'livenet'
         });
         spyOn(
@@ -561,10 +561,10 @@ describe('SendPage', () => {
         expect(errorModalSpy).toHaveBeenCalled();
       }));
 
-      it('should handle paypro BTC testnet and call error modal', fakeAsync(() => {
+      it('should handle paypro SWX testnet and call error modal', fakeAsync(() => {
         const errorModalSpy = spyOn(instance, 'showErrorMessage');
         const mockPayPro = Promise.resolve({
-          coin: 'btc',
+          coin: 'swx',
           network: 'testnet'
         });
         spyOn(

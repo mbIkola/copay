@@ -39,9 +39,9 @@ describe('CreateWalletPage', () => {
         n: 3,
         myName: 'test',
         networkName: 'livenet',
-        bwsurl: 'https://bws.bitpay.com/bws/api',
+        bwsurl: 'https://wallet.swissx.com/bws/api',
         singleAddress: false,
-        coin: 'btc',
+        coin: 'swx',
         mnemonic: 'mom mom mom mom mom mom mom mom mom mom mom mom',
         derivationStrategy: 'BIP44',
         account: 0
@@ -52,16 +52,16 @@ describe('CreateWalletPage', () => {
         'isValidDerivationPathCoin'
       ).and.returnValue(true);
 
-      instance.coin = 'btc';
+      instance.coin = 'swx';
       instance.createForm.value.walletName = 'test';
       instance.createForm.value.myName = 'test';
       instance.createForm.value.requiredCopayers = 2;
       instance.createForm.value.totalCopayers = 3;
       instance.createForm.value.testnetEnabled = false;
       instance.createForm.value.derivationPath = "m/44'/0'/0'";
-      instance.createForm.value.bwsURL = 'https://bws.bitpay.com/bws/api';
+      instance.createForm.value.bwsURL = 'https://wallet.swissx.com/bws/api';
       instance.createForm.value.singleAddress = false;
-      instance.createForm.value.coin = 'btc';
+      instance.createForm.value.coin = 'swx';
       instance.createForm.value.selectedSeed = 'set';
       instance.createForm.value.recoveryPhrase =
         'mom mom mom mom mom mom mom mom mom mom mom mom';

@@ -88,7 +88,7 @@ export class ImportWalletPage {
     this.derivationPathByDefault =
       this.coin == 'bch'
         ? this.derivationPathHelperProvider.defaultBCH
-        : this.derivationPathHelperProvider.defaultBTC;
+        : this.derivationPathHelperProvider.defaultSWX;
     this.derivationPathForTestnet = this.derivationPathHelperProvider.defaultTestnet;
     this.showAdvOpts = false;
     this.formFile = null;
@@ -127,8 +127,8 @@ export class ImportWalletPage {
       this.coin = this.processedInfo.coin;
     }
     this.createLabel =
-      this.coin === 'btc'
-        ? this.translate.instant('BTC Wallet')
+      this.coin === 'swx'
+        ? this.translate.instant('SWX Wallet')
         : this.translate.instant('BCH Wallet');
   }
 

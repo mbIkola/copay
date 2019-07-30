@@ -70,7 +70,7 @@ export class SellCoinbasePage {
     private platformProvider: PlatformProvider
   ) {
     this.isFiat = true;
-    this.coin = this.navParams.data.coin; // BTC
+    this.coin = this.navParams.data.coin; // SWX
     this.amount = this.navParams.data.amount; // USD
     this.currency = this.navParams.data.currency; // USD
     this.priceSensitivity = this.coinbaseProvider.priceSensitivity;
@@ -217,9 +217,9 @@ export class SellCoinbasePage {
           count +
           '/5'
       );
-      // TX amount in BTC
+      // TX amount in SWX
       let satToBtc = 1 / 100000000;
-      let amountBTC = (txp.amount * satToBtc).toFixed(8);
+      let amountSWX = (txp.amount * satToBtc).toFixed(8);
       this.coinbaseProvider.init((err, res) => {
         if (err) {
           this.logger.error(err);
@@ -261,7 +261,7 @@ export class SellCoinbasePage {
                   if (
                     ctx.type == 'send' &&
                     ctx.from &&
-                    ctx.amount.amount == amountBTC
+                    ctx.amount.amount == amountSWX
                   ) {
                     this.logger.debug('Transaction found!', ctx);
                     txFound = true;
@@ -488,7 +488,7 @@ export class SellCoinbasePage {
       await this.navCtrl.popToRoot({ animate: false });
       await this.navCtrl.push(
         CoinbasePage,
-        { coin: 'btc' },
+        { coin: 'swx' },
         { animate: false }
       );
     });

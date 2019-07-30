@@ -171,8 +171,8 @@ export class ConfirmInvoicePage extends ConfirmPage {
     const walletsBtc = this.profileProvider.getWallets({
       onlyComplete: true,
       network: this.network,
-      coin: 'btc',
-      minAmount: this.invoiceData.paymentTotals['BTC']
+      coin: 'swx',
+      minAmount: this.invoiceData.paymentTotals['SWX']
     });
     const walletsBch = this.profileProvider.getWallets({
       onlyComplete: true,

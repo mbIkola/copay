@@ -86,7 +86,7 @@ export class SettingsPage {
       this.language.getCurrent()
     );
     this.walletsBtc = this.profileProvider.getWallets({
-      coin: 'btc'
+      coin: 'swx'
     });
     this.walletsBch = this.profileProvider.getWallets({
       coin: 'bch'

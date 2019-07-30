@@ -86,8 +86,8 @@ export class PaperWalletPage {
     );
 
     this.wallet = {
-      btc: _.filter(this.wallets, w => {
-        return w.coin == 'btc';
+      swx: _.filter(this.wallets, w => {
+        return w.coin == 'swx';
       })[0],
       bch: _.filter(this.wallets, w => {
         return w.coin == 'bch';

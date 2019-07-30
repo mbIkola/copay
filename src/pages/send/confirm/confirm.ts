@@ -426,7 +426,7 @@ export class ConfirmPage extends WalletTabsChild {
       }
 
       const maxAllowedMerchantFee = {
-        btc: 'urgent',
+        swx: 'urgent',
         bch: 'normal'
       };
 
@@ -617,7 +617,7 @@ export class ConfirmPage extends WalletTabsChild {
     const warningMsg = this.verifyExcludedUtxos(wallet, sendMaxInfo);
 
     const coinName =
-      this.wallet.coin === Coin.BTC ? 'Bitcoin (BTC)' : 'Bitcoin Cash (BCH)';
+      this.wallet.coin === Coin.SWX ? 'Bitcoin (SWX)' : 'Bitcoin Cash (BCH)';
 
     const minerFeeNoticeInfoSheet = this.actionSheetProvider.createInfoSheet(
       'miner-fee-notice',

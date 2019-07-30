@@ -44,7 +44,7 @@
           </ion-icon>
           <ion-label>Buy</ion-label>
           <ion-note *ngIf="buyPrice" item-end>
-            {{buyPrice.amount|currency:'$':2}} {{buyPrice.currency}}/BTC
+            {{buyPrice.amount|currency:'$':2}} {{buyPrice.currency}}/SWX
           </ion-note>
         </button>
         <button padding ion-item (click)="goToSellCoinbasePage()">
@@ -53,7 +53,7 @@
           </ion-icon>
           <ion-label>Sell</ion-label>
           <ion-note *ngIf="sellPrice"  item-end>
-            {{sellPrice.amount|currency:'$':2}} {{sellPrice.currency}}/BTC
+            {{sellPrice.amount|currency:'$':2}} {{sellPrice.currency}}/SWX
           </ion-note>
         </button>
         <ion-item-divider>Activity</ion-item-divider>

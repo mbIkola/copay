@@ -63,7 +63,7 @@ export class TransferToPage {
     private popupProvider: PopupProvider,
     private addressProvider: AddressProvider
   ) {
-    this.walletsBtc = this.profileProvider.getWallets({ coin: 'btc' });
+    this.walletsBtc = this.profileProvider.getWallets({ coin: 'swx' });
     this.walletsBch = this.profileProvider.getWallets({ coin: 'bch' });
     this.hasBtcWallets = !_.isEmpty(this.walletsBtc);
     this.hasBchWallets = !_.isEmpty(this.walletsBch);
@@ -201,7 +201,7 @@ export class TransferToPage {
         return _.includes(wallet.name.toLowerCase(), this.search.toLowerCase());
       });
     }
-    if (this.hasBtcWallets && this._wallet.coin === 'btc') {
+    if (this.hasBtcWallets && this._wallet.coin === 'swx') {
       this.filteredWallets = this.walletBtcList.filter(wallet => {
         return _.includes(wallet.name.toLowerCase(), this.search.toLowerCase());
       });

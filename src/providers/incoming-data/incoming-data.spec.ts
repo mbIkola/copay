@@ -94,7 +94,7 @@ describe('Provider: Incoming Data Provider', () => {
     });
     it('Should handle Join Wallet', () => {
       let data =
-        'copay:RTpopkn5KBnkxuT7x4ummDKx3Lu1LvbntddBC4ssDgaqP7DkojT8ccxaFQEXY4f3huFyMewhHZLbtc';
+        'copay:RTpopkn5KBnkxuT7x4ummDKx3Lu1LvbntddBC4ssDgaqP7DkojT8ccxaFQEXY4f3huFyMewhHZLswx';
       let stateParams = { url: data, fromScan: true };
       let nextView = {
         name: 'JoinWalletPage',
@@ -111,7 +111,7 @@ describe('Provider: Incoming Data Provider', () => {
     });
     it('Should handle Old Join Wallet', () => {
       let data =
-        'RTpopkn5KBnkxuT7x4ummDKx3Lu1LvbntddBC4ssDgaqP7DkojT8ccxaFQEXY4f3huFyMewhHZLbtc';
+        'RTpopkn5KBnkxuT7x4ummDKx3Lu1LvbntddBC4ssDgaqP7DkojT8ccxaFQEXY4f3huFyMewhHZLswx';
       let stateParams = { url: data, fromScan: true };
       let nextView = {
         name: 'JoinWalletPage',
@@ -147,7 +147,7 @@ describe('Provider: Incoming Data Provider', () => {
         expect(eventsSpy).toHaveBeenCalledWith('IncomingDataRedir', nextView);
       });
     });
-    it('Should handle BTC and BCH BitPay Invoices', () => {
+    it('Should handle SWX and BCH BitPay Invoices', () => {
       let data = [
         'bitcoin:?r=https://bitpay.com/i/CtcM753gnZ4Wpr5pmXU6i9',
         'bitcoincash:?r=https://bitpay.com/i/Rtz1RwWA7kdRRU3Wyo4YDY'
@@ -278,7 +278,7 @@ describe('Provider: Incoming Data Provider', () => {
             amount,
             toAddress: addr,
             description: message,
-            coin: 'btc'
+            coin: 'swx'
           };
           let nextView = {
             name: 'ConfirmPage',
@@ -289,7 +289,7 @@ describe('Provider: Incoming Data Provider', () => {
           let stateParams = {
             toAddress: addr,
             description: message,
-            coin: 'btc'
+            coin: 'swx'
           };
           let nextView = {
             name: 'AmountPage',
@@ -387,7 +387,7 @@ describe('Provider: Incoming Data Provider', () => {
           data: {
             data: element,
             type: 'bitcoinAddress',
-            coin: 'btc'
+            coin: 'swx'
           }
         });
       });

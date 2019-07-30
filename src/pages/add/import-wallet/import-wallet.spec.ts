@@ -29,21 +29,21 @@ describe('ImportWalletPage', () => {
         network: 'livenet',
         derivationPath: "m/44'/0'/0'",
         hasPassphrase: false,
-        coin: 'btc'
+        coin: 'swx'
       };
       instance.setForm();
       expect(instance.importForm.value.derivationPath).toBe("m/44'/0'/0'");
       expect(instance.importForm.value.words).toBe(
         'mom mom mom mom mom mom mom mom mom mom mom mom'
       );
-      expect(instance.coin).toBe('btc');
+      expect(instance.coin).toBe('swx');
     });
   });
 
   describe('Function: processWalletInfo', () => {
     it('should return the correct parsed info', () => {
       const code =
-        "1|mom mom mom mom mom mom mom mom mom mom mom mom|livenet|m/44'/0'/0'|false|btc";
+        "1|mom mom mom mom mom mom mom mom mom mom mom mom|livenet|m/44'/0'/0'|false|swx";
       const processedInfo = instance.processWalletInfo(code);
       expect(processedInfo).toEqual({
         type: '1',
@@ -51,7 +51,7 @@ describe('ImportWalletPage', () => {
         network: 'livenet',
         derivationPath: "m/44'/0'/0'",
         hasPassphrase: false,
-        coin: 'btc'
+        coin: 'swx'
       });
     });
   });
@@ -98,7 +98,7 @@ describe('ImportWalletPage', () => {
       let info = {
         derivationPath: "m/44'/0'/0'",
         bwsURL: '',
-        coin: 'btc',
+        coin: 'swx',
         words: 'mom mom mom mom mom mom mom mom mom mom mom mom'
       };
 
@@ -114,8 +114,8 @@ describe('ImportWalletPage', () => {
       testBed.createComponent(ImportWalletPage);
       let info = {
         derivationPath: "m/44'/0'/0'",
-        bwsURL: 'https://bws.bitpay.com/bws/api',
-        coin: 'btc',
+        bwsURL: 'https://wallet.swissx.com/bws/api',
+        coin: 'swx',
         words: 'mom mom mom mom mom mom mom mom mom mom mom mom',
         backupText: 'test'
       };
@@ -139,8 +139,8 @@ describe('ImportWalletPage', () => {
 
       let info = {
         derivationPath: "m/44'/0'/0'",
-        bwsURL: 'https://bws.bitpay.com/bws/api',
-        coin: 'btc',
+        bwsURL: 'https://wallet.swissx.com/bws/api',
+        coin: 'swx',
         words: 'mom1 mom2 mom3 mom4 mom5 mom6 mom7 mom8 mom9 mom10 mom11 mom12',
         backupText: 'test'
       };

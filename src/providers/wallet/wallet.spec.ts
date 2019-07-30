@@ -93,7 +93,7 @@ describe('Provider: Wallet Provider', () => {
       const newOpts = {
         wallet: {
           settings: {
-            unitCode: 'btc',
+            unitCode: 'swx',
             alternativeIsoCode: 'USD',
             unitToSatoshi: 100000000
           }
@@ -188,11 +188,11 @@ describe('Provider: Wallet Provider', () => {
         spendableAmount: 400000000,
         unitToSatoshi: 100000000,
         satToUnit: 1e-8,
-        totalBalanceStr: '5.00 BTC',
-        lockedBalanceStr: '1.00 BTC',
-        availableBalanceStr: '4.00 BTC',
-        spendableBalanceStr: '4.00 BTC',
-        pendingBalanceStr: '0.00 BTC',
+        totalBalanceStr: '5.00 SWX',
+        lockedBalanceStr: '1.00 SWX',
+        availableBalanceStr: '4.00 SWX',
+        spendableBalanceStr: '4.00 SWX',
+        pendingBalanceStr: '0.00 SWX',
         alternativeName: 'US Dollar',
         alternativeIsoCode: 'USD',
         totalBalanceAlternative: '1,000,000',
@@ -239,11 +239,11 @@ describe('Provider: Wallet Provider', () => {
         spendableAmount: 400000000,
         unitToSatoshi: 100000000,
         satToUnit: 1e-8,
-        totalBalanceStr: '5.00 BTC',
-        lockedBalanceStr: '1.00 BTC',
-        availableBalanceStr: '4.00 BTC',
-        spendableBalanceStr: '4.00 BTC',
-        pendingBalanceStr: '0.00 BTC',
+        totalBalanceStr: '5.00 SWX',
+        lockedBalanceStr: '1.00 SWX',
+        availableBalanceStr: '4.00 SWX',
+        spendableBalanceStr: '4.00 SWX',
+        pendingBalanceStr: '0.00 SWX',
         alternativeName: 'US Dollar',
         alternativeIsoCode: 'USD',
         totalBalanceAlternative: '1,000,000',
@@ -296,7 +296,7 @@ describe('Provider: Wallet Provider', () => {
 
     it("should return the same address if it isn't BCH", () => {
       const address = walletProvider.getAddressView(
-        'btc',
+        'swx',
         'livenet',
         '3DTdZeycDBaimjuuknVGrG8fxdLbjsAjXN'
       );
@@ -900,7 +900,7 @@ describe('Provider: Wallet Provider', () => {
 
       walletProvider.getEncodedWalletInfo(wallet, pass).then(walletInfo => {
         expect(walletInfo).toEqual(
-          "1|mom mom mom mom mom mom mom mom mom mom mom mom|livenet|m/44'/0'/0'|false|btc"
+          "1|mom mom mom mom mom mom mom mom mom mom mom mom|livenet|m/44'/0'/0'|false|swx"
         );
       });
     });
@@ -911,7 +911,7 @@ describe('Provider: Wallet Provider', () => {
       wallet.credentials.getBaseAddressDerivationPath = () => "m/44'/0'/0'";
 
       walletProvider.getEncodedWalletInfo(wallet, pass).then(walletInfo => {
-        expect(walletInfo).toEqual("2|xPrivKey1|livenet|m/44'/0'/0'|false|btc");
+        expect(walletInfo).toEqual("2|xPrivKey1|livenet|m/44'/0'/0'|false|swx");
       });
     });
 
@@ -1005,8 +1005,8 @@ describe('Provider: Wallet Provider', () => {
       expect(protocol).toEqual('bchtest');
     });
 
-    it('Should return bitcoin if coin is btc', () => {
-      const coin = 'btc';
+    it('Should return bitcoin if coin is swx', () => {
+      const coin = 'swx';
       const protocol = walletProvider.getProtocolHandler(coin);
       expect(protocol).toEqual('bitcoin');
     });

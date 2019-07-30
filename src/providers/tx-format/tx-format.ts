@@ -93,7 +93,7 @@ export class TxFormatProvider {
     }).bind(this);
 
     if (
-      (!this.rate.isBtcAvailable() && coin == 'btc') ||
+      (!this.rate.isBtcAvailable() && coin == 'swx') ||
       (!this.rate.isBchAvailable() && coin == 'bch')
     )
       return null;
@@ -178,7 +178,7 @@ export class TxFormatProvider {
     let alternativeIsoCode = settings.alternativeIsoCode;
 
     // If fiat currency
-    if (currency != 'BCH' && currency != 'BTC' && currency != 'sat') {
+    if (currency != 'BCH' && currency != 'SWX' && currency != 'sat') {
       let formattedAmount = onlyIntegers
         ? this.filter.formatFiatAmount(amount.toFixed(0))
         : this.filter.formatFiatAmount(amount);
@@ -187,13 +187,13 @@ export class TxFormatProvider {
     } else if (currency == 'sat') {
       amountSat = Number(amount);
       amountUnitStr = this.formatAmountStr(coin, amountSat);
-      // convert sat to BTC or BCH
+      // convert sat to SWX or BCH
       amount = (amountSat * satToBtc).toFixed(8);
       currency = coin.toUpperCase();
     } else {
       amountSat = parseInt((amount * unitToSatoshi).toFixed(0), 10);
       amountUnitStr = this.formatAmountStr(coin, amountSat);
-      // convert unit to BTC or BCH
+      // convert unit to SWX or BCH
       amount = (amountSat * satToBtc).toFixed(8);
       currency = coin.toUpperCase();
     }

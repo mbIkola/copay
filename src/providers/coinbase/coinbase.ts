@@ -228,11 +228,11 @@ export class CoinbaseProvider {
     // Fee Normal for a single transaction (450 bytes)
     var txNormalFeeKB = 450 / 1000;
     this.feeProvider
-      .getFeeRate('btc', 'livenet', 'normal')
+      .getFeeRate('swx', 'livenet', 'normal')
       .then(feePerKb => {
-        var feeBTC = ((feePerKb * txNormalFeeKB) / 100000000).toFixed(8);
+        var feeSWX = ((feePerKb * txNormalFeeKB) / 100000000).toFixed(8);
 
-        return cb(null, amount - parseInt(feeBTC, 10), parseInt(feeBTC, 10));
+        return cb(null, amount - parseInt(feeSWX, 10), parseInt(feeSWX, 10));
       })
       .catch(() => {
         return cb('Could not get fee rate');
@@ -311,14 +311,14 @@ export class CoinbaseProvider {
           data[i].primary &&
           data[i].type == 'wallet' &&
           data[i].currency &&
-          data[i].currency.code == 'BTC'
+          data[i].currency.code == 'SWX'
         ) {
           return cb(null, data[i].id);
         }
       }
       this.logout();
       return cb(
-        'Your primary account should be a BTC WALLET. Set your wallet account as primary and try again'
+        'Your primary account should be a SWX WALLET. Set your wallet account as primary and try again'
       );
     });
   }
@@ -1220,7 +1220,7 @@ export class CoinbaseProvider {
   ) {
     if (!tx) return;
     var desc = this.appProvider.info.nameCase + ' Wallet';
-    this._getNetAmount(tx.amount.amount, (err, amountBTC, feeBTC) => {
+    this._getNetAmount(tx.amount.amount, (err, amountSWX, feeSWX) => {
       if (err) {
         this._savePendingTransaction(
           tx,
@@ -1238,10 +1238,10 @@ export class CoinbaseProvider {
 
       var data = {
         to: tx.toAddr,
-        amount: amountBTC,
+        amount: amountSWX,
         currency: tx.amount.currency,
         description: desc,
-        fee: feeBTC
+        fee: feeSWX
       };
       this.sendTo(accessToken, accountId, data, (err, res) => {
         if (err) {

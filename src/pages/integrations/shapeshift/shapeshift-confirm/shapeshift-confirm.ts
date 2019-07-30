@@ -120,17 +120,17 @@ export class ShapeshiftConfirmPage {
       /*
        * Coin Pair
        *
-       * BTC -> BCH
-       *   min (BTC)
-       *   max (BTC)
-       *   rate (BCH) per 1 BTC
+       * SWX -> BCH
+       *   min (SWX)
+       *   max (SWX)
+       *   rate (BCH) per 1 SWX
        *   fee (BCH)
        *
-       * BCH -> BTC
+       * BCH -> SWX
        *   min (BCH)
        *   max (BCH)
-       *   rate (BTC) per 1 BCH
-       *   fee (BTC)
+       *   rate (SWX) per 1 BCH
+       *   fee (SWX)
        */
 
       const depositMin = Number(lim.minimum);
@@ -505,13 +505,13 @@ export class ShapeshiftConfirmPage {
   }
 
   private getLegacyAddressFormat(addr: string, coin: string): string {
-    if (coin == 'btc') return addr;
+    if (coin == 'swx') return addr;
     let a = this.bitcoreCash.Address(addr).toObject();
     return this.bitcore.Address.fromObject(a).toString();
   }
 
   private getNewAddressFormat(addr: string, coin: string): string {
-    if (coin == 'btc') return addr;
+    if (coin == 'swx') return addr;
     let a = this.bitcore.Address(addr).toObject();
     return this.bitcoreCash.Address.fromObject(a).toString(true);
   }

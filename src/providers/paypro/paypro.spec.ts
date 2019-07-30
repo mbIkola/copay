@@ -9,7 +9,7 @@ describe('PayProProvider', () => {
   const defaultPayPro = {
     verified: true,
     network: 'livenet',
-    coin: 'btc',
+    coin: 'swx',
     requiredFeeRate: 134.972,
     amount: 278800,
     toAddress: '1Jzx8hv7Mz8DZH2QoLiWyFBCsCqK1yjwwz',
@@ -22,7 +22,7 @@ describe('PayProProvider', () => {
   const walletFixture = {
     id: {
       credentials: {
-        coin: 'btc',
+        coin: 'swx',
         network: 'livenet'
       },
       isComplete: () => {
@@ -35,7 +35,7 @@ describe('PayProProvider', () => {
   const walletFixture2 = {
     id: {
       credentials: {
-        coin: 'btc',
+        coin: 'swx',
         network: 'testnet'
       },
       isComplete: () => {
@@ -57,12 +57,12 @@ describe('PayProProvider', () => {
         return cb(null, defaultPayPro);
       };
       profileProvider.wallet = walletFixture;
-      payproProvider.getPayProDetails('uri', 'btc').then(paypro => {
+      payproProvider.getPayProDetails('uri', 'swx').then(paypro => {
         expect(paypro).toEqual({
           verified: true,
           network: 'livenet',
           payProUrl: 'uri',
-          coin: 'btc',
+          coin: 'swx',
           requiredFeeRate: 134.972,
           amount: 278800,
           toAddress: '1Jzx8hv7Mz8DZH2QoLiWyFBCsCqK1yjwwz',
@@ -79,7 +79,7 @@ describe('PayProProvider', () => {
         return cb(null, defaultPayPro);
       };
       profileProvider.wallet = walletFixture;
-      payproProvider.getPayProDetails('uri', 'btc').catch(err => {
+      payproProvider.getPayProDetails('uri', 'swx').catch(err => {
         expect(err).toBeDefined();
       });
     });
@@ -88,7 +88,7 @@ describe('PayProProvider', () => {
         return cb(new Error());
       };
       profileProvider.wallet = walletFixture;
-      payproProvider.getPayProDetails('uri', 'btc').catch(err => {
+      payproProvider.getPayProDetails('uri', 'swx').catch(err => {
         expect(err).toBeDefined();
       });
     });
@@ -97,7 +97,7 @@ describe('PayProProvider', () => {
         return cb(new Error('The invoice is no longer receiving payments'));
       };
       profileProvider.wallet = walletFixture;
-      payproProvider.getPayProDetails('uri', 'btc').catch(err => {
+      payproProvider.getPayProDetails('uri', 'swx').catch(err => {
         expect(err).toBeDefined();
       });
     });
@@ -108,12 +108,12 @@ describe('PayProProvider', () => {
         );
       };
       profileProvider.wallet = walletFixture2;
-      payproProvider.getPayProDetails('uri', 'btc').catch(err => {
+      payproProvider.getPayProDetails('uri', 'swx').catch(err => {
         expect(err).toBeDefined();
       });
     });
     it('should resolve without error if no wallet available', () => {
-      payproProvider.getPayProDetails('uri', 'btc').then(result => {
+      payproProvider.getPayProDetails('uri', 'swx').then(result => {
         expect(result).toBe(undefined);
       });
     });

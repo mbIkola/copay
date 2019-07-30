@@ -54,7 +54,7 @@ export class ShapeshiftShiftPage {
     this.walletsBtc = this.profileProvider.getWallets({
       onlyComplete: true,
       network: this.network,
-      coin: 'btc'
+      coin: 'swx'
     });
 
     this.walletsBch = this.profileProvider.getWallets({
@@ -113,7 +113,7 @@ export class ShapeshiftShiftPage {
 
   private showToWallets(): void {
     this.toWallets =
-      this.fromWallet.coin == 'btc' ? this.walletsBch : this.walletsBtc;
+      this.fromWallet.coin == 'swx' ? this.walletsBch : this.walletsBtc;
 
     this.toWallets = this.toWallets.filter(w => !w.needsBackup);
 

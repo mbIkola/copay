@@ -15,13 +15,13 @@ export class PriceCard {
   public lastDates = 6;
   public coins = [
     {
-      unitCode: 'btc',
+      unitCode: 'swx',
       historicalRates: [],
       currentPrice: 0,
       averagePrice: 0,
       backgroundColor: 'rgba(247,146,26,1)',
       gradientBackgroundColor: 'rgba(247,146,26, 0.2)',
-      name: 'Bitcoin'
+      name: 'Swissx'
     },
     {
       unitCode: 'bch',

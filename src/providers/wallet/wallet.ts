@@ -28,7 +28,7 @@ export interface HistoryOptionsI {
 }
 
 export enum Coin {
-  BTC = 'btc',
+  SWX = 'swx',
   BCH = 'bch'
 }
 
@@ -1216,8 +1216,8 @@ export class WalletProvider {
       // Get current languge
       prefs.language = this.languageProvider.getCurrent();
 
-      // Set OLD wallet in bits to btc
-      prefs.unit = 'btc'; // DEPRECATED
+      // Set OLD wallet in bits to swx
+      prefs.unit = 'swx'; // DEPRECATED
 
       updateRemotePreferencesFor(_.clone(clients), prefs)
         .then(() => {

@@ -34,17 +34,17 @@ describe('Profile Provider', () => {
     id1: {
       id: 'id1',
       copayerId: 'copayerId1',
-      lastKnownBalance: '10.00 BTC',
+      lastKnownBalance: '10.00 SWX',
       lastKnownBalanceUpdatedOn: null,
       credentials: {
-        coin: 'btc',
+        coin: 'swx',
         network: 'livenet',
         n: 1,
         m: 1,
         walletId: 'id1'
       },
       cachedStatus: {
-        availableBalanceSat: 1000000000 // 10 BTC
+        availableBalanceSat: 1000000000 // 10 SWX
       },
       needsBackup: false,
       order: '',
@@ -93,17 +93,17 @@ describe('Profile Provider', () => {
     id3: {
       id: 'id3',
       copayerId: 'copayerId3',
-      lastKnownBalance: '1.50 BTC',
+      lastKnownBalance: '1.50 SWX',
       lastKnownBalanceUpdatedOn: null,
       credentials: {
-        coin: 'btc',
+        coin: 'swx',
         network: 'testnet',
         n: 2,
         m: 2,
         walletId: 'id3'
       },
       cachedStatus: {
-        availableBalanceSat: 150000000 // 1.50 BTC
+        availableBalanceSat: 150000000 // 1.50 SWX
       },
       needsBackup: true,
       order: 3,
@@ -125,7 +125,7 @@ describe('Profile Provider', () => {
   const walletClientMock = {
     copayerId: 'copayerId1',
     credentials: {
-      coin: 'btc',
+      coin: 'swx',
       network: 'livenet',
       n: 1,
       m: 1,
@@ -322,7 +322,7 @@ describe('Profile Provider', () => {
       switch (_id) {
         case 'id1':
           lastKnownBalance = {
-            balance: '10.00 BTC',
+            balance: '10.00 SWX',
             updatedOn: 1558382053803
           };
           break;
@@ -335,7 +335,7 @@ describe('Profile Provider', () => {
           break;
         default:
           lastKnownBalance = {
-            balance: '0.00 BTC',
+            balance: '0.00 SWX',
             updatedOn: Date.now()
           };
           break;
@@ -906,9 +906,9 @@ describe('Profile Provider', () => {
         n: 1,
         myName: null,
         networkName: 'livenet',
-        bwsurl: 'https://bws.bitpay.com/bws/api',
+        bwsurl: 'https://wallet.swissx.com/bws/api',
         singleAddress: false,
-        coin: 'btc',
+        coin: 'swx',
         mnemonic: 'mom mom mom mom mom mom mom mom mom mom mom mom'
       };
 
@@ -930,9 +930,9 @@ describe('Profile Provider', () => {
         n: 1,
         myName: null,
         networkName: 'livenet',
-        bwsurl: 'https://bws.bitpay.com/bws/api',
+        bwsurl: 'https://wallet.swissx.com/bws/api',
         singleAddress: false,
-        coin: 'btc',
+        coin: 'swx',
         extendedPrivateKey: 'extendedPrivateKey1'
       };
 
@@ -954,9 +954,9 @@ describe('Profile Provider', () => {
         n: 1,
         myName: null,
         networkName: 'livenet',
-        bwsurl: 'https://bws.bitpay.com/bws/api',
+        bwsurl: 'https://wallet.swissx.com/bws/api',
         singleAddress: false,
-        coin: 'btc',
+        coin: 'swx',
         extendedPublicKey: 'extendedPublicKey1'
       };
 
@@ -978,9 +978,9 @@ describe('Profile Provider', () => {
         n: 1,
         myName: null,
         networkName: 'livenet',
-        bwsurl: 'https://bws.bitpay.com/bws/api',
+        bwsurl: 'https://wallet.swissx.com/bws/api',
         singleAddress: false,
-        coin: 'btc'
+        coin: 'swx'
       };
 
       profileProvider
@@ -1010,7 +1010,7 @@ describe('Profile Provider', () => {
     it('should join wallet and publish "Local/WalletListChange" event', async () => {
       const opts = {
         secret: 'secret5',
-        coin: 'btc',
+        coin: 'swx',
         myName: 'Gabriel M'
       };
 
@@ -1028,7 +1028,7 @@ describe('Profile Provider', () => {
     it('should fails to join wallet if you already joined that wallet', async () => {
       const opts = {
         secret: 'secret1',
-        coin: 'btc',
+        coin: 'swx',
         myName: 'Gabriel M'
       };
 
@@ -1125,7 +1125,7 @@ describe('Profile Provider', () => {
         m: 1,
         n: 1,
         networkName: 'livenet',
-        coin: 'btc'
+        coin: 'swx'
       });
     });
   });
@@ -1148,9 +1148,9 @@ describe('Profile Provider', () => {
         n: 1,
         myName: null,
         networkName: 'livenet',
-        bwsurl: 'https://bws.bitpay.com/bws/api',
+        bwsurl: 'https://wallet.swissx.com/bws/api',
         singleAddress: false,
-        coin: 'btc'
+        coin: 'swx'
       };
       const createWalletSpy = spyOn(
         profileProvider,
@@ -1212,7 +1212,7 @@ describe('Profile Provider', () => {
 
     it('should get successfully all wallets when opts are provided', () => {
       const opts = {
-        coin: 'btc',
+        coin: 'swx',
         network: 'testnet',
         n: 2,
         m: 2,
@@ -1406,7 +1406,7 @@ describe('Profile Provider', () => {
         'replace'
       ).and.returnValue('body1');
 
-      spyOn(txFormatProvider, 'formatAmountStr').and.returnValue('5.00 BTC');
+      spyOn(txFormatProvider, 'formatAmountStr').and.returnValue('5.00 SWX');
 
       // Using importWallet just to test showDesktopNotifications private function
       await profileProvider.importWallet(str, opts).catch(err => {

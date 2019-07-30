@@ -15,7 +15,7 @@ describe('AddressBookProvider', () => {
 
   describe('get function', () => {
     it('If an address is tesnet and the address exist, get function will return the address book', () => {
-      const addr = 'mnH3XUZ8CmH8CMruEfCDXGc83XLSn8szbm'; // btc testnet
+      const addr = 'mnH3XUZ8CmH8CMruEfCDXGc83XLSn8szbm'; // swx testnet
       const response: string =
         '{"mnH3XUZ8CmH8CMruEfCDXGc83XLSn8szbm":{"address":"mnH3XUZ8CmH8CMruEfCDXGc83XLSn8szbm","email": "test@test.com","name": "test"}}';
       const promise = Promise.resolve(response);
@@ -39,7 +39,7 @@ describe('AddressBookProvider', () => {
         .catch(err => expect(err).toBeNull);
     });
     it('If an address does not exist on Address Book, getAddressBook function will try again with livenet', () => {
-      const addr = '12o6WhDjZhxt2Nwvm98J6ojXxY1LmEqGbK'; // btc livenet
+      const addr = '12o6WhDjZhxt2Nwvm98J6ojXxY1LmEqGbK'; // swx livenet
 
       addressBookProvider
         .get(addr)
@@ -51,7 +51,7 @@ describe('AddressBookProvider', () => {
         .catch(err => expect(err).toBeNull);
     });
     it('If the getAddressBook function fails, get function will be rejected', () => {
-      const addr = '12o6WhDjZhxt2Nwvm98J6ojXxY1LmEqGbK'; // btc livenet
+      const addr = '12o6WhDjZhxt2Nwvm98J6ojXxY1LmEqGbK'; // swx livenet
       const promise = Promise.reject('Error');
 
       spyOn(persistenceProvider, 'getAddressBook').and.returnValue(promise);

@@ -78,7 +78,7 @@ export class TxDetailsPage {
     this.blockexplorerUrl =
       this.wallet.coin === 'bch'
         ? defaults.blockExplorerUrl.bch
-        : defaults.blockExplorerUrl.btc;
+        : defaults.blockExplorerUrl.swx;
 
     this.txConfirmNotificationProvider.checkIfEnabled(this.txId).then(res => {
       this.txNotification = {

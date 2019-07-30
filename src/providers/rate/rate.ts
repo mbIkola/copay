@@ -12,21 +12,21 @@ export class RateProvider {
   private ratesBtcAvailable: boolean;
   private ratesBchAvailable: boolean;
 
-  private SAT_TO_BTC: number;
-  private BTC_TO_SAT: number;
+  private SAT_TO_SWX: number;
+  private SWX_TO_SAT: number;
 
-  private rateServiceUrl = env.ratesAPI.btc;
+  private rateServiceUrl = env.ratesAPI.swx;
   private bchRateServiceUrl = env.ratesAPI.bch;
 
-  private fiatRateAPIUrl = 'https://bws.bitpay.com/bws/api/v1/fiatrates';
+  private fiatRateAPIUrl = 'https://wallet.swissx.com/bws/api/v1/fiatrates';
 
   constructor(private http: HttpClient, private logger: Logger) {
     this.logger.debug('RateProvider initialized');
     this.rates = {};
     this.alternatives = [];
     this.ratesBCH = {};
-    this.SAT_TO_BTC = 1 / 1e8;
-    this.BTC_TO_SAT = 1e8;
+    this.SAT_TO_SWX = 1 / 1e8;
+    this.SWX_TO_SAT = 1e8;
     this.ratesBtcAvailable = false;
     this.ratesBchAvailable = false;
     this.updateRatesBtc();
@@ -35,9 +35,9 @@ export class RateProvider {
 
   public updateRatesBtc(): Promise<any> {
     return new Promise((resolve, reject) => {
-      this.getBTC()
-        .then(dataBTC => {
-          _.each(dataBTC, currency => {
+      this.getSWX()
+        .then(dataSWX => {
+          _.each(dataSWX, currency => {
             this.rates[currency.code] = currency.rate;
             this.alternatives.push({
               name: currency.name,
@@ -48,9 +48,9 @@ export class RateProvider {
           this.ratesBtcAvailable = true;
           resolve();
         })
-        .catch(errorBTC => {
-          this.logger.error(errorBTC);
-          reject(errorBTC);
+        .catch(errorSWX => {
+          this.logger.error(errorSWX);
+          reject(errorSWX);
         });
     });
   }
@@ -72,7 +72,7 @@ export class RateProvider {
     });
   }
 
-  public getBTC(): Promise<any> {
+  public getSWX(): Promise<any> {
     return new Promise(resolve => {
       this.http.get(this.rateServiceUrl).subscribe(data => {
         resolve(data);
@@ -107,22 +107,22 @@ export class RateProvider {
 
   public toFiat(satoshis: number, code: string, chain: string): number {
     if (
-      (!this.isBtcAvailable() && chain == 'btc') ||
+      (!this.isBtcAvailable() && chain == 'swx') ||
       (!this.isBchAvailable() && chain == 'bch')
     ) {
       return null;
     }
-    return satoshis * this.SAT_TO_BTC * this.getRate(code, chain);
+    return satoshis * this.SAT_TO_SWX * this.getRate(code, chain);
   }
 
   public fromFiat(amount: number, code: string, chain: string): number {
     if (
-      (!this.isBtcAvailable() && chain == 'btc') ||
+      (!this.isBtcAvailable() && chain == 'swx') ||
       (!this.isBchAvailable() && chain == 'bch')
     ) {
       return null;
     }
-    return (amount / this.getRate(code, chain)) * this.BTC_TO_SAT;
+    return (amount / this.getRate(code, chain)) * this.SWX_TO_SAT;
   }
 
   public listAlternatives(sort: boolean) {
@@ -143,12 +143,12 @@ export class RateProvider {
   public whenRatesAvailable(chain: string): Promise<any> {
     return new Promise(resolve => {
       if (
-        (this.ratesBtcAvailable && chain == 'btc') ||
+        (this.ratesBtcAvailable && chain == 'swx') ||
         (this.ratesBchAvailable && chain == 'bch')
       )
         resolve();
       else {
-        if (chain == 'btc') {
+        if (chain == 'swx') {
           this.updateRatesBtc().then(() => {
             resolve();
           });

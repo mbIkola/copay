@@ -150,14 +150,14 @@ export class WalletMock {
       walletId: 'walletid1',
       walletName: 'Test wallet'
     };
-    this.coin = 'btc';
+    this.coin = 'swx';
     this.id = 'walletid1';
     this.needsBackup = false;
     this.network = 'livenet';
     this.pendingTxps = [];
     this.scanning = null;
     this.status = statusMock;
-    this.totalBalanceSat = '0.01 BTC';
+    this.totalBalanceSat = '0.01 SWX';
   }
   isComplete() {
     return true;

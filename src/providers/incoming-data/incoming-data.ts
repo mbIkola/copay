@@ -48,7 +48,7 @@ export class IncomingDataProvider {
       value = data.value;
     }
     if (redirTo === 'AmountPage') {
-      let coin = data.coin ? data.coin : 'btc';
+      let coin = data.coin ? data.coin : 'swx';
       this.events.publish('finishIncomingDataMenuEvent', {
         redirTo,
         value,
@@ -171,7 +171,7 @@ export class IncomingDataProvider {
     this.logger.debug(
       'Incoming-data: Payment Protocol with non-backwards-compatible request'
     );
-    let coin = data.indexOf('bitcoincash') === 0 ? Coin.BCH : Coin.BTC;
+    let coin = data.indexOf('bitcoincash') === 0 ? Coin.BCH : Coin.SWX;
     data = decodeURIComponent(data.replace(/bitcoin(cash)?:\?r=/, ''));
 
     this.goToPayPro(data, coin);
@@ -212,7 +212,7 @@ export class IncomingDataProvider {
     this.logger.debug('Incoming-data: Bitcoin URI');
     let amountFromRedirParams =
       redirParams && redirParams.amount ? redirParams.amount : '';
-    const coin = Coin.BTC;
+    const coin = Coin.SWX;
     let parsed = this.bwcProvider.getBitcore().URI(data);
     let address = parsed.address ? parsed.address.toString() : '';
     let message = parsed.message;
@@ -283,7 +283,7 @@ export class IncomingDataProvider {
     redirParams?: RedirParams
   ): void {
     this.logger.debug('Incoming-data: Bitcoin plain address');
-    const coin = Coin.BTC;
+    const coin = Coin.SWX;
     if (redirParams && redirParams.activePage === 'ScanPage') {
       this.showMenu({
         data,
@@ -721,7 +721,7 @@ export class IncomingDataProvider {
   }
 
   public getPayProDetails(data: string): Promise<any> {
-    let coin: string = data.indexOf('bitcoincash') === 0 ? Coin.BCH : Coin.BTC;
+    let coin: string = data.indexOf('bitcoincash') === 0 ? Coin.BCH : Coin.SWX;
     data = decodeURIComponent(data.replace(/bitcoin(cash)?:\?r=/, ''));
 
     let disableLoader = true;

@@ -17,7 +17,7 @@ describe('ConfirmPage', () => {
           toAddress: 'n4VQ5YdHf7hLQ2gWQYYrcxoE5B7nWuDFNF'
         }
       };
-      instance.tx = { coin: 'BTC' };
+      instance.tx = { coin: 'SWX' };
       spyOn(instance.onGoingProcessProvider, 'set');
       fixture.detectChanges();
     })));
@@ -86,7 +86,7 @@ describe('ConfirmPage', () => {
       it('should not break', () => {
         instance.tx = { paypro: { expires: 1000 } };
         const wallet = {
-          coin: 'BTC',
+          coin: 'SWX',
           credentials: {
             m: 1
           },
@@ -99,7 +99,7 @@ describe('ConfirmPage', () => {
     });
     describe('confirmTx', () => {
       it('should display a confirm popup', () => {
-        const txp = { coin: 'BTC' };
+        const txp = { coin: 'SWX' };
         const wallet = {};
         spyOn(instance.txFormatProvider, 'formatToUSD').and.returnValue(
           Promise.resolve('100.50')
@@ -109,7 +109,7 @@ describe('ConfirmPage', () => {
     });
     describe('approve', () => {
       const tx = {};
-      const txp = { coin: 'BTC' };
+      const txp = { coin: 'SWX' };
       const wallet = {};
       it('should clear the ongoing process loader if user declines', async () => {
         spyOn(instance, 'getTxp').and.returnValue(Promise.resolve(txp));

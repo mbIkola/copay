@@ -131,8 +131,8 @@ msgstr "Wszystko"
 msgid "All addresses"
 msgstr "Wszystkie adresy"
 
-msgid "All of your bitcoin wallet balance may not be available for immediate spending."
-msgstr "Wszystkie salda portfela bitcoin mogą nie być dostępne do natychmiastowego wydania."
+msgid "All of your swissx wallet balance may not be available for immediate spending."
+msgstr "Wszystkie salda portfela swissx mogą nie być dostępne do natychmiastowego wydania."
 
 msgid "Allow camera access"
 msgstr "Zezwalaj na dostęp do kamery"
@@ -164,8 +164,8 @@ msgstr "Kwota:"
 msgid "Apply changes"
 msgstr "Zastosuj zmiany"
 
-msgid "Approximate Bitcoin network fee to transfer wallet's balance (with normal priority)"
-msgstr "Szacunkowe opłaty sieci Bitcoin do przeniesienia salda portfela (normalny priorytet)"
+msgid "Approximate Swissx network fee to transfer wallet's balance (with normal priority)"
+msgstr "Szacunkowe opłaty sieci Swissx do przeniesienia salda portfela (normalny priorytet)"
 
 msgid "Archive All {brand} Gift Cards?"
 msgstr ""
@@ -209,7 +209,7 @@ msgstr "Czekam na potwierdzenie wpłaty"
 msgid "BCH Wallet"
 msgstr ""
 
-msgid "BTC Wallet"
+msgid "SWX Wallet"
 msgstr ""
 
 msgid "Back up all your wallets before using this function"
@@ -251,35 +251,35 @@ msgstr ""
 msgid "BitPay does not receive and does not control miner fees."
 msgstr ""
 
-msgid "Bitcoin Address"
-msgstr "Adres bitcoin"
+msgid "Swissx Address"
+msgstr "Adres swissx"
 
-msgid "Bitcoin Cash Address"
+msgid "Swissx Cash Address"
 msgstr ""
 
-msgid "Bitcoin Cash URI"
+msgid "Swissx Cash URI"
 msgstr ""
 
-msgid "Bitcoin Cash Wallets"
-msgstr "Płatność Bitcoin Cash"
+msgid "Swissx Cash Wallets"
+msgstr "Płatność Swissx Cash"
 
-msgid "Bitcoin Network Fee Policy"
-msgstr "Polityka prowizji sieci bitcoin"
+msgid "Swissx Network Fee Policy"
+msgstr "Polityka prowizji sieci swissx"
 
-msgid "Bitcoin URI"
+msgid "Swissx URI"
 msgstr ""
 
-msgid "Bitcoin Wallets"
-msgstr "Portfele Bitcoin"
+msgid "Swissx Wallets"
+msgstr "Portfele Swissx"
 
-msgid "Bitcoin miner fee:"
+msgid "Swissx miner fee:"
 msgstr ""
 
-msgid "Bitcoin network fee policy"
-msgstr "Polityka prowizji sieci Bitcoin"
+msgid "Swissx network fee policy"
+msgstr "Polityka prowizji sieci Swissx"
 
-msgid "Bitcoin transactions include a fee collected by miners on the network."
-msgstr "Transakcje Bitcoin obejmują prowizję pobieraną przez górników w sieci."
+msgid "Swissx transactions include a fee collected by miners on the network."
+msgstr "Transakcje Swissx obejmują prowizję pobieraną przez górników w sieci."
 
 msgid "Broadcast Payment"
 msgstr "Przekaż płatność"
@@ -296,8 +296,8 @@ msgstr "Kup kartę podarunkową"
 msgid "Buy Gift Cards"
 msgstr ""
 
-msgid "Buying Bitcoin..."
-msgstr "Zakup bitcoinów..."
+msgid "Buying Swissx..."
+msgstr "Zakup swissxów..."
 
 msgid "Buying Gift Card..."
 msgstr "Kupowanie karty podarunkowej..."
@@ -641,7 +641,7 @@ msgstr ""
 msgid "Duplicating wallet..."
 msgstr "Duplikowanie portfela..."
 
-msgid "Each bitcoin wallet can generate billions of addresses from your 12-word recovery phrase. A new address is automatically generated and shown each time you receive a payment."
+msgid "Each swissx wallet can generate billions of addresses from your 12-word recovery phrase. A new address is automatically generated and shown each time you receive a payment."
 msgstr ""
 
 msgid "Economy"
@@ -692,7 +692,7 @@ msgstr ""
 msgid "Enter an email address"
 msgstr ""
 
-msgid "Enter bitcoin address"
+msgid "Enter swissx address"
 msgstr ""
 
 msgid "Enter custom fee in sat/byte"
@@ -962,7 +962,7 @@ msgstr ""
 msgid "I understand"
 msgstr "Rozumiem"
 
-msgid "I understand that if this app is moved to another device or deleted, my bitcoin can only be recovered with the recovery phrase"
+msgid "I understand that if this app is moved to another device or deleted, my swissx can only be recovered with the recovery phrase"
 msgstr ""
 
 msgid "I understand that my funds are held securely on this device, not by a company"
@@ -1079,7 +1079,7 @@ msgstr ""
 msgid "It's a ghost town in here"
 msgstr ""
 
-msgid "It's a good idea to avoid reusing addresses - this both protects your privacy and keeps your bitcoins secure against hypothetical attacks by quantum computers."
+msgid "It's a good idea to avoid reusing addresses - this both protects your privacy and keeps your swissxs secure against hypothetical attacks by quantum computers."
 msgstr ""
 
 msgid "It's important that you write your recovery phrase down correctly. If something happens to your wallet, you'll need it to recover your money. Please review and try again."
@@ -1115,7 +1115,7 @@ msgstr ""
 msgid "Linked"
 msgstr ""
 
-msgid "Load dollars onto your BitPay Card using your bitcoin wallet. Shop anywhere that accepts Visa®"
+msgid "Load dollars onto your BitPay Card using your swissx wallet. Shop anywhere that accepts Visa®"
 msgstr ""
 
 msgid "Loading addresses..."
@@ -1310,14 +1310,14 @@ msgstr ""
 msgid "Not set"
 msgstr ""
 
-msgid "Not valid bitcoin address"
-msgstr "Nieprawidłowy adres bitcoin"
+msgid "Not valid swissx address"
+msgstr "Nieprawidłowy adres swissx"
 
 msgid "Note"
 msgstr "Notatka"
 
-msgid "Note: if this BCH wallet was duplicated from a BTC wallet, they share the same recovery phrase."
-msgstr "Uwaga: Jeśli ten portfel BCH został zduplikowany z portfela BTC, będą one współdzielić ten sam zwrot odzyskiwania."
+msgid "Note: if this BCH wallet was duplicated from a SWX wallet, they share the same recovery phrase."
+msgstr "Uwaga: Jeśli ten portfel BCH został zduplikowany z portfela SWX, będą one współdzielić ten sam zwrot odzyskiwania."
 
 msgid "Notifications"
 msgstr "Powiadomienia"
@@ -1412,8 +1412,8 @@ msgstr "Wklej tekst kodu kopii zapasowej"
 msgid "Paste this code on {cardConfig.website}. This gift card cannot be recovered if your claim code is lost."
 msgstr ""
 
-msgid "Pay 0% fees to turn bitcoin into dollars."
-msgstr "Zapłać 0% prowizji za wymianę bitcoinów na dolary."
+msgid "Pay 0% fees to turn swissx into dollars."
+msgstr "Zapłać 0% prowizji za wymianę swissxów na dolary."
 
 msgid "Payment Accepted"
 msgstr "Wypłata zaakceptowana"
@@ -1712,8 +1712,8 @@ msgstr ""
 msgid "Search a contact"
 msgstr "Przeszukaj wszystkie kontakty"
 
-msgid "Search or enter bitcoin address"
-msgstr "Wyszukaj lub wpisz adres bitcoin"
+msgid "Search or enter swissx address"
+msgstr "Wyszukaj lub wpisz adres swissx"
 
 msgid "Search your currency"
 msgstr "Znajdź swoją walutę"
@@ -1730,8 +1730,8 @@ msgstr "Wybierz portfel"
 msgid "Select currency"
 msgstr ""
 
-msgid "Selling Bitcoin..."
-msgstr "Sprzedawanie bitcoinów..."
+msgid "Selling Swissx..."
+msgstr "Sprzedawanie swissxów..."
 
 msgid "Send"
 msgstr "Wyślij"
@@ -1904,7 +1904,7 @@ msgstr "Wniosek wypłaty nie został znaleziony"
 msgid "Spendable balance"
 msgstr ""
 
-msgid "Spending this balance will need significant Bitcoin network fees"
+msgid "Spending this balance will need significant Swissx network fees"
 msgstr ""
 
 msgid "Status"
@@ -1961,14 +1961,14 @@ msgstr ""
 msgid "The Wallet Service URL"
 msgstr ""
 
-msgid "The amount of bitcoin immediately spendable from this wallet."
+msgid "The amount of swissx immediately spendable from this wallet."
 msgstr "Możliwa jest natychmiastowa wypłata wszystkich środków z tego portfela."
 
-msgid "The amount of bitcoin stored in this wallet that is allocated as inputs to your pending transaction proposals. The amount is determined using unspent transaction outputs associated with this wallet and may be more than the actual amounts associated with your pending transaction proposals."
-msgstr "Kwota bitcoinów przechowywana w tym portfelu, przydzielona jako wejście dla oczekujących wniosków wypłat. Kwota ta jest ustalana za pomocą niewykorzystanych wyjść transakcji związanych z tym portfelem i może przekroczyć kwoty związane z proponowanymi wnioskami wypłat."
+msgid "The amount of swissx stored in this wallet that is allocated as inputs to your pending transaction proposals. The amount is determined using unspent transaction outputs associated with this wallet and may be more than the actual amounts associated with your pending transaction proposals."
+msgstr "Kwota swissxów przechowywana w tym portfelu, przydzielona jako wejście dla oczekujących wniosków wypłat. Kwota ta jest ustalana za pomocą niewykorzystanych wyjść transakcji związanych z tym portfelem i może przekroczyć kwoty związane z proponowanymi wnioskami wypłat."
 
-msgid "The amount of bitcoin stored in this wallet with less than 1 blockchain confirmation."
-msgstr "Ilość bitcoinów przechowywana w tym portfel z mniej niż jednym potwierdzeniem w blockchainie."
+msgid "The amount of swissx stored in this wallet with less than 1 blockchain confirmation."
+msgstr "Ilość swissxów przechowywana w tym portfel z mniej niż jednym potwierdzeniem w blockchainie."
 
 msgid "The derivation path"
 msgstr "Ścieżka derywacji"
@@ -2015,11 +2015,11 @@ msgstr ""
 msgid "The spend proposal is not pending"
 msgstr "Wniosek o wypłatę nie jest w oczekujących"
 
-msgid "The testnet is an alternative Bitcoin block chain, to be used for testing. Testnet coins are separate and distinct from actual bitcoins, and do not have any value. This allows application developers or bitcoin testers to experiment, without having to use real bitcoins."
+msgid "The testnet is an alternative Swissx block chain, to be used for testing. Testnet coins are separate and distinct from actual swissxs, and do not have any value. This allows application developers or swissx testers to experiment, without having to use real swissxs."
 msgstr ""
 
-msgid "The total amount of bitcoin stored in this wallet."
-msgstr "Łączna ilość bitcoinów przechowywana w tym portfelu."
+msgid "The total amount of swissx stored in this wallet."
+msgstr "Łączna ilość swissxów przechowywana w tym portfelu."
 
 msgid "The transaction from {{walletName}} that you were waiting for has been confirmed."
 msgstr ""
@@ -2042,7 +2042,7 @@ msgstr ""
 msgid "This app is not available for your device."
 msgstr ""
 
-msgid "This bitcoin payment request has expired."
+msgid "This swissx payment request has expired."
 msgstr "Ten wniosek płatności wygasł."
 
 msgid "This field is only for users who, in previous versions (it's not supported anymore), set a password to protect their recovery phrase. This field is not for your encrypt password."
@@ -2072,7 +2072,7 @@ msgstr ""
 msgid "This recovery phrase was created with a password. To recover this wallet both the recovery phrase and password are needed."
 msgstr "Ta kluczowa fraza został utworzona przy użyciu hasła. Aby odzyskać portfel potrzebna jest kluczowa fraza i hasło."
 
-msgid "This transaction amount is too small compared to current Bitcoin network fees. Spending these funds will need a Bitcoin network fee cost comparable to the funds itself."
+msgid "This transaction amount is too small compared to current Swissx network fees. Spending these funds will need a Swissx network fee cost comparable to the funds itself."
 msgstr ""
 
 msgid "This transaction could take a long time to confirm or could be dropped due to the low fees set by the sender."
@@ -2093,8 +2093,8 @@ msgstr "Historia"
 msgid "To"
 msgstr "Do"
 
-msgid "To get started, you'll need to create a bitcoin wallet and get some bitcoin."
-msgstr "Aby rozpocząć należy utworzyć portfel i dostać trochę bitcoinów."
+msgid "To get started, you'll need to create a swissx wallet and get some swissx."
+msgstr "Aby rozpocząć należy utworzyć portfel i dostać trochę swissxów."
 
 msgid "To get started, you'll need to enter a valid address, contact or wallet."
 msgstr ""
@@ -2156,10 +2156,10 @@ msgstr "Transakcje bez opłaty nie są obsługiwane."
 msgid "Transfer to"
 msgstr ""
 
-msgid "Transfer to Bitcoin Cash Wallet"
+msgid "Transfer to Swissx Cash Wallet"
 msgstr ""
 
-msgid "Transfer to Bitcoin Wallet"
+msgid "Transfer to Swissx Wallet"
 msgstr ""
 
 msgid "Transfer to Contact"
@@ -2177,7 +2177,7 @@ msgstr ""
 msgid "Try again in {{expires}}"
 msgstr "Spróbuj ponownie w {{expires}}"
 
-msgid "Turn bitcoin into dollars, swipe anywhere Visa® is accepted."
+msgid "Turn swissx into dollars, swipe anywhere Visa® is accepted."
 msgstr ""
 
 msgid "Type the recovery phrase (usually 12 words)"
@@ -2453,8 +2453,8 @@ msgstr "Możesz przyczynić się do rozwoju aplikacji rejestrując się na Crowd
 msgid "You can now send or receive a payment directly from the home view by sliding your wallet to the left or right."
 msgstr ""
 
-msgid "You can scan bitcoin addresses, payment requests, paper wallets, and more."
-msgstr "Możesz zeskanować adresy bitcoin, wnioski płatności, portfele papierowe i wiele innych."
+msgid "You can scan swissx addresses, payment requests, paper wallets, and more."
+msgstr "Możesz zeskanować adresy swissx, wnioski płatności, portfele papierowe i wiele innych."
 
 msgid "You can see the latest developments and contribute to this open source app by visiting our project on GitHub."
 msgstr "Możesz zobaczyć postępy prac i przyczynić się do rozwoju tej aplikacji open source odwiedzając nasz projekt na GitHub."
@@ -2477,7 +2477,7 @@ msgstr "Nie należy ustawiać opłatę wyższą niż {{maxFeeRecommended}} satos
 msgid "Your BitPay Card is ready. Add funds to your card to start using it at stores."
 msgstr ""
 
-msgid "Your extended private keys are all that is needed to access your bitcoin funds. Be sure to protect your private keys and store them only on secure devices. BitPay does not have access to your private keys, so you alone are responsible for your keys. If you share key access with external services, you take responsibility for the risk of theft or breach. Only advanced users should handle extended private keys directly."
+msgid "Your extended private keys are all that is needed to access your swissx funds. Be sure to protect your private keys and store them only on secure devices. BitPay does not have access to your private keys, so you alone are responsible for your keys. If you share key access with external services, you take responsibility for the risk of theft or breach. Only advanced users should handle extended private keys directly."
 msgstr ""
 
 msgid "Your fee is lower than recommended."
@@ -2528,13 +2528,13 @@ msgstr ""
 msgid "{displayName} requires you to present a printed gift card at redemption."
 msgstr ""
 
-msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://bws.bitpay.com (BitPay's public BWS instance)."
+msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://wallet.swissx.com (BitPay's public BWS instance)."
 msgstr ""
 
-msgid "{{appName}} only supports Bitcoin Cash using new version numbers addresses."
+msgid "{{appName}} only supports Swissx Cash using new version numbers addresses."
 msgstr ""
 
-msgid "{{fee}} {{coin}} will be deducted for bitcoin networking fees."
+msgid "{{fee}} {{coin}} will be deducted for swissx networking fees."
 msgstr ""
 
 msgid "{{txpsSuccess}} proposal signed"

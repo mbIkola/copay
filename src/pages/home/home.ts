@@ -423,7 +423,7 @@ export class HomePage {
         }
         if (this.validDataFromClipboard.type === 'PayPro') {
           const coin: string =
-            data.indexOf('bitcoincash') === 0 ? Coin.BCH : Coin.BTC;
+            data.indexOf('bitcoincash') === 0 ? Coin.BCH : Coin.SWX;
           this.incomingDataProvider
             .getPayProDetails(data)
             .then(payProDetails => {

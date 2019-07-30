@@ -86,7 +86,7 @@ export class PendingTxpMock {
     this.id = 'txpId1';
     this.walletId = 'walletId1';
     this.creatorId = 'copayerId1';
-    this.coin = 'btc';
+    this.coin = 'swx';
     this.network = 'testnet';
     this.outputs = [
       {
@@ -107,7 +107,7 @@ export class PendingTxpMock {
       isChange: true,
       path: 'm/1/455',
       publicKeys: ['publicKeys1', 'publicKeys2'],
-      coin: 'btc',
+      coin: 'swx',
       network: 'testnet',
       type: 'P2SH',
       hasActivity: null,
