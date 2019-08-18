@@ -187,7 +187,7 @@ export class CoinbaseProvider {
 
   public getAvailableCurrency() {
     // Only "USD" (US bank account)
-    return 'USD';
+    return 'CHF';
   }
 
   public checkEnoughFundsForFee(amount, cb) {

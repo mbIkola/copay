@@ -6,8 +6,12 @@
           <ion-avatar item-start>
             <img src="assets/img/currencies/{{coin.unitCode}}.svg">
           </ion-avatar>
-          <h2>{{coin.name}}</h2>
-        </ion-item>
+          <h2>{{coin.name}} 
+	  <div class="buy button" style="float:right;">
+		BUY Using this rate {{ coin.currentPrice }} {{isoCode }} 
+	  </div>
+	  </h2>
+         </ion-item>
         <div class="price">
           <div class="amount-content">
             <div class="expression-container">
@@ -22,7 +26,7 @@
               <span class="average">{{ coin.averagePrice | number:'1.2-2' }} % <span class="average-time">| 7d</span></span>
             </div>
           </div>
-          <price-chart #canvas></price-chart>
+	  <price-chart #canvas></price-chart>
         </div>
       </ion-slide>
     </ion-slides>

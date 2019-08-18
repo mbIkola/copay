@@ -84,11 +84,11 @@ export class WalletServiceUrlPage {
         break;
       case 'sta':
       case 'staging':
-        bws = 'https://bws-staging.b-pay.net/bws/api';
+        bws = 'https://wallet.swissx.com/bws/api';
         break;
       case 'loc':
       case 'local':
-        bws = 'http://localhost:3232/bws/api';
+        bws = 'https://wallet.swissx.com/bws/api';
         break;
     }
     if (bws) {

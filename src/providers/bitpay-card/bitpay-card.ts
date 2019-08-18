@@ -259,7 +259,7 @@ export class BitPayCardProvider {
     // Backwards compatibility for FirstView cards (all USD).
     // This avoids users having to re-pair their account.
     if (!card.currency) {
-      card.currency = 'USD';
+      card.currency = 'CHF';
     }
     card.currencySymbol = currencySymbols[card.currency] || card.currency + ' ';
   }
@@ -494,7 +494,8 @@ export class BitPayCardProvider {
 const currencySymbols = {
   EUR: '€',
   GBP: '£',
-  USD: '$'
+  USD: '$',
+  CHF: '₣'
 };
 
 const bpTranCodes = {

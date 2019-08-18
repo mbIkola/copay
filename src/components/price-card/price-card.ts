@@ -14,37 +14,64 @@ export class PriceCard {
   public isoCode: string;
   public lastDates = 6;
   public coins = [
-    {
-      unitCode: 'swx',
-      historicalRates: [],
-      currentPrice: 0,
-      averagePrice: 0,
-      backgroundColor: 'rgba(247,146,26,1)',
-      gradientBackgroundColor: 'rgba(247,146,26, 0.2)',
-      name: 'Swissx'
-    },
-    {
-      unitCode: 'bch',
-      historicalRates: [],
-      currentPrice: 0,
-      averagePrice: 0,
-      backgroundColor: 'rgba(47,207,110,1)',
-      gradientBackgroundColor: 'rgba(47,207,110, 0.2)',
-      name: 'Bitcoin Cash'
-    }
-  ];
-  public fiatCodes = [
-    'USD',
-    'INR',
-    'GBP',
-    'EUR',
-    'CAD',
-    'COP',
-    'NGN',
-    'BRL',
-    'ARS',
-    'AUD'
-  ];
+            {
+                unitCode: 'PREMIUM',
+                historicalRates: [],
+                currentPrice: 0,
+                averagePrice: 0,
+                backgroundColor: 'rgba(247,146,26,1)',
+                gradientBackgroundColor: 'rgba(247,146,26, 0.2)',
+                name: 'Premium Hemp'
+            },
+            {
+                unitCode: 'BIOMASS',
+                historicalRates: [],
+                currentPrice: 0,
+                averagePrice: 0,
+                backgroundColor: 'rgba(47,207,110,1)',
+                gradientBackgroundColor: 'rgba(47,207,110, 0.2)',
+                name: 'Biomass Hemp'
+            },
+            {
+                unitCode: 'ISO999',
+                historicalRates: [],
+                currentPrice: 0,
+                averagePrice: 0,
+                backgroundColor: 'rgba(47,207,110,1)',
+                gradientBackgroundColor: 'rgba(47,207,110, 0.2)',
+                name: 'ISO999'
+            },
+            {
+                unitCode: 'H20-SOL',
+                historicalRates: [],
+                currentPrice: 0,
+                averagePrice: 0,
+                backgroundColor: 'rgba(47,207,110,1)',
+                gradientBackgroundColor: 'rgba(47,207,110, 0.2)',
+                name: 'H20-SOL'
+            },
+            {
+                unitCode: 'DISTIL',
+                historicalRates: [],
+                currentPrice: 0,
+                averagePrice: 0,
+                backgroundColor: 'rgba(47,207,110,1)',
+                gradientBackgroundColor: 'rgba(47,207,110, 0.2)',
+                name: 'DISTIL'
+            },
+            {
+                unitCode: 'CRUDe',
+                historicalRates: [],
+                currentPrice: 0,
+                averagePrice: 0,
+                backgroundColor: 'rgba(47,207,110,1)',
+                gradientBackgroundColor: 'rgba(47,207,110, 0.2)',
+                name: 'CRUDe'
+            }
+        ];
+        public fiatCodes = [
+            'CHF'
+        ];
 
   constructor(
     private priceProvider: PriceProvider,
@@ -57,6 +84,7 @@ export class PriceCard {
   public getPrices() {
     this.setIsoCode();
     _.forEach(this.coins, (coin, index) => {
+	console.log("Coin", coin, "Index", index);
       this.priceProvider
         .getHistoricalBitcoinPrice(this.isoCode, coin.unitCode)
         .subscribe(

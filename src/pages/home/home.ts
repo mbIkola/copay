@@ -383,8 +383,8 @@ export class HomePage {
   }
 
   private checkPriceChart() {
-    this.persistenceProvider.getPriceChartFlag().then(res => {
-      this.showPriceChart = res === 'enabled' ? true : false;
+    this.persistenceProvider.getPriceChartFlag().then(() => {
+      this.showPriceChart = true; // res === 'enabled' ? true : false;
       this.updateCharts();
     });
   }

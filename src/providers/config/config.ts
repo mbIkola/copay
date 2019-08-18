@@ -127,8 +127,8 @@ export class ConfigProvider {
           unitToSatoshi: 100000000,
           unitDecimals: 8,
           unitCode: 'swx',
-          alternativeName: 'US Dollar',
-          alternativeIsoCode: 'USD',
+      	  alternativeName: 'Swiss Franc',
+          alternativeIsoCode: 'CHF',
           defaultLanguage: '',
           feeLevel: 'normal'
         }

@@ -72,7 +72,7 @@ export class TxFormatProvider {
     return new Promise(resolve => {
       let v1: number;
       if (isNaN(satoshis)) return resolve();
-      v1 = this.rate.toFiat(satoshis, 'USD', coin);
+      v1 = this.rate.toFiat(satoshis, 'CHF', coin);
       if (!v1) return resolve(null);
       return resolve(v1.toFixed(2));
     });

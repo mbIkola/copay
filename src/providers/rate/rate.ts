@@ -171,7 +171,15 @@ export class RateProvider {
       const url =
         this.fiatRateAPIUrl + '/' + currency + '?coin=' + coin + '&ts=' + ts;
       this.http.get(url).subscribe(data => {
-        resolve(data);
+	if ( data && data.hasOwnProperty('rate') ) { 
+		resolve(data);
+	} else {
+		resolve({
+			fetchedOn: ts,
+			rate: 29.75,
+			ts
+		});
+	}
       });
     });
   }
