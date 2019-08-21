@@ -7,9 +7,7 @@
             <img src="assets/img/currencies/{{coin.unitCode}}.svg">
           </ion-avatar>
           <h2>{{coin.name}} 
-	  <div class="buy button" style="float:right;">
-		BUY Using this rate {{ coin.currentPrice }} {{isoCode }} 
-	  </div>
+		  <a href="https://exchange.swissx.com/?product={{coin.name}}&rate={{coin.currentPrice}}" target="_blank">Buy at current rate</a>
 	  </h2>
          </ion-item>
         <div class="price">

@@ -84,7 +84,6 @@ export class PriceCard {
   public getPrices() {
     this.setIsoCode();
     _.forEach(this.coins, (coin, index) => {
-	console.log("Coin", coin, "Index", index);
       this.priceProvider
         .getHistoricalBitcoinPrice(this.isoCode, coin.unitCode)
         .subscribe(
