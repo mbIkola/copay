@@ -1,0 +1,54 @@
+<wide-header-page title="{{'Select Wallet' | translate}}">
+    <div page-content>
+        <div class="wallets-container" *ngIf="wallets && wallets.length">
+        <div class="section-header">
+            <span translate>
+              Wallets
+            </span>
+<!--                <span *ngIf="!showReorder && wallets.length > 1" (click)="reorder()" class="reorder-button" tappable>-->
+<!--          <img src="assets/img/sort.svg">-->
+<!--        </span>-->
+<!--                <span *ngIf="showReorder" (click)="reorder()" class="reorder-done" tappable>-->
+<!--          {{'Done' | translate}}-->
+<!--        </span>-->
+        </div>
+
+            <ion-list class="sliding-container wallets" >
+                <ion-item-sliding *ngFor="let wallet of wallets" #slidingItem>
+                    <button ion-item detail-none (click)="onWalletAction(wallet, 'select', slidingItem)">
+                        <wallet-item-content [wallet]="wallet"></wallet-item-content>
+                    </button>
+                </ion-item-sliding>
+            </ion-list>
+<!--            <ion-list class="sliding-container wallets" >-->
+<!--                <div *ngFor="let wallet of wallets">-->
+<!--                    <ion-item-sliding #slidingItem>-->
+<!--                        <button ion-item detail-none (click)="onWalletAction(wallet, 'view', slidingItem)">-->
+<!--                            <wallet-item-content [wallet]="wallet"></wallet-item-content>-->
+<!--                        </button>-->
+<!--                        <ion-item-options side="left">-->
+<!--                            <button class="action action&#45;&#45;send" ion-button (click)="onWalletAction(wallet, 'send', slidingItem)">-->
+<!--                                <div class="action__icon"><img src="assets/img/send.svg" /></div>-->
+<!--                                <div class="action__text">Send</div>-->
+<!--                            </button>-->
+<!--                        </ion-item-options>-->
+<!--                        <ion-item-options side="right">-->
+<!--                            <button class="action action&#45;&#45;receive" ion-button (click)="onWalletAction(wallet, 'receive', slidingItem)">-->
+<!--                                <div class="action__icon"><img src="assets/img/receive.svg" /></div>-->
+<!--                                <div class="action__text">Receive</div>-->
+<!--                            </button>-->
+<!--                        </ion-item-options>-->
+<!--                    </ion-item-sliding>-->
+<!--                    <label-tip type="info" *ngIf="!wallet.isComplete()">-->
+<!--                        <span label-tip-title translate>Wallet Incomplete</span>-->
+<!--                        <div label-tip-body>-->
+<!--                            <span translate>This wallet is waiting for authorized users/devices to join.</span>-->
+<!--                        </div>-->
+<!--                    </label-tip>-->
+<!--                </div>-->
+<!--            </ion-list>-->
+        </div>
+
+
+    </div>
+</wide-header-page>

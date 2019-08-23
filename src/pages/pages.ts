@@ -104,6 +104,7 @@ import { TransferToPage } from '../pages/send/transfer-to/transfer-to';
 
 /* Receive */
 import { CustomAmountPage } from '../pages/receive/custom-amount/custom-amount';
+import { SelectWalletPage } from './select-wallet/select-wallet';
 import { WideHeaderPage } from './templates/wide-header-page/wide-header-page';
 import { WalletTabsChild } from './wallet-tabs/wallet-tabs-child';
 
@@ -197,5 +198,6 @@ export const PAGES = [
   WalletBalancePage,
   WideHeaderPage,
   CardItemPage,
-  SlideToAcceptPage
+  SlideToAcceptPage,
+  SelectWalletPage
 ];

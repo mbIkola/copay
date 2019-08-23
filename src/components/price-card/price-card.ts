@@ -1,5 +1,7 @@
 import { Component, QueryList, ViewChildren } from '@angular/core';
+import { NavController } from 'ionic-angular';
 import * as _ from 'lodash';
+import { SelectWalletPage } from '../../pages/select-wallet/select-wallet';
 import { ConfigProvider, Logger, PriceProvider } from '../../providers';
 import { PriceChart } from './price-chart/price-chart';
 
@@ -74,6 +76,7 @@ export class PriceCard {
         ];
 
   constructor(
+    private navCtrl: NavController,
     private priceProvider: PriceProvider,
     private configProvider: ConfigProvider,
     private logger: Logger
@@ -143,6 +146,9 @@ export class PriceCard {
       : this.getPrices();
   }
 
+  public onBuyButton(coin, isoCode) {
+    this.navCtrl.push(SelectWalletPage, {coin, isoCode});
+  }
   private setIsoCode() {
     const alternativeIsoCode = this.configProvider.get().wallet.settings
       .alternativeIsoCode;
