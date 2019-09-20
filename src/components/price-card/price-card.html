@@ -6,8 +6,9 @@
           <ion-avatar item-start>
             <img src="assets/img/currencies/{{coin.unitCode}}.svg">
           </ion-avatar>
-          <h2>{{coin.name}} 
-		  <a  (click)="onBuyButton(coin, isoCode)">Buy at current rate</a>
+          <h2>{{coin.name}}
+		  <a  (click)="onBuyButton(coin, isoCode)">Buy</a>
+          <a  (click)="onSellButton(coin, isoCode)">&nbsp;Sell</a>
 	  </h2>
          </ion-item>
         <div class="price">

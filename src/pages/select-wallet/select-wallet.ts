@@ -58,8 +58,9 @@ export class SelectWalletPage {
        navParams: ${this.navParam.data} 
        `);
     // this.navCtrl.push(HomePage);
-
-    this.openExternalLink(`https://exchange.swissx.com/?copayerId=${wallet.copayerId}&wallet=${wallet.credentials.walletId}&walletName=${wallet.credentials.walletName}`);
+    const targetAction = this.navParam.data.action === 'sell' ?  'sell' : '';
+    this.openExternalLink(`https://exchange.swissx.com/${targetAction}`+
+      `?copayerId=${wallet.copayerId}&wallet=${wallet.credentials.walletId}&walletName=${wallet.credentials.walletName}`);
     slidingItem.close();
   }
 

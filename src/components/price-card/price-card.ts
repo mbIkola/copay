@@ -146,7 +146,11 @@ export class PriceCard {
   }
 
   public onBuyButton(coin, isoCode) {
-    this.navCtrl.push(SelectWalletPage, {coin, isoCode});
+    this.navCtrl.push(SelectWalletPage, {coin, isoCode, action: 'buy'});
+  }
+
+  public onSellButton(coin, isoCode) {
+    this.navCtrl.push(SelectWalletPage, {coin, isoCode, action: 'sell'});
   }
   private setIsoCode() {
     const alternativeIsoCode = this.configProvider.get().wallet.settings
