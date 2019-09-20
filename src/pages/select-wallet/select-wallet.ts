@@ -61,10 +61,11 @@ export class SelectWalletPage {
     const targetAction = this.navParam.data.action === 'sell' ?  'sell' : '';
     const product = this.navParam.data.coin.unitCode;
     const currency = this.navParam.data.coin.isoCode;
+    const currentPrice = this.navParam.data.coin.currentPrice;
     this.openExternalLink(
       `https://exchange.swissx.com/${targetAction}`+
       `?copayerId=${wallet.copayerId}&wallet=${wallet.credentials.walletId}&walletName=${wallet.credentials.walletName}`+
-      `&product=${product}&currency=${currency}`
+      `&product=${product}&currency=${currency}&rate=${currentPrice}`
     );
     slidingItem.close();
   }
