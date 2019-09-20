@@ -55,12 +55,17 @@ export class SelectWalletPage {
       `Redirecting to order page: action=${action}
        copayerId=${wallet.copayerId}&wallet=${wallet.credentials.walletId}&walletName=${wallet.credentials.walletName}
       
-       navParams: ${this.navParam.data} 
+       navParams: ${JSON.stringify(this.navParam.data)}
        `);
     // this.navCtrl.push(HomePage);
     const targetAction = this.navParam.data.action === 'sell' ?  'sell' : '';
-    this.openExternalLink(`https://exchange.swissx.com/${targetAction}`+
-      `?copayerId=${wallet.copayerId}&wallet=${wallet.credentials.walletId}&walletName=${wallet.credentials.walletName}`);
+    const product = this.navParam.data.coin.unitCode;
+    const currency = this.navParam.data.coin.isoCode;
+    this.openExternalLink(
+      `https://exchange.swissx.com/${targetAction}`+
+      `?copayerId=${wallet.copayerId}&wallet=${wallet.credentials.walletId}&walletName=${wallet.credentials.walletName}`+
+      `&product=${product}&currency=${currency}`
+    );
     slidingItem.close();
   }
 
